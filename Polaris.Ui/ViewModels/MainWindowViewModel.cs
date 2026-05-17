@@ -1,6 +1,31 @@
-﻿namespace Polaris.Ui.ViewModels;
+﻿using System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
+using Polaris.Ui.Interfaces;
+using Polaris.Ui.Models;
 
-public partial class MainWindowViewModel : ViewModelBase
+namespace Polaris.Ui.ViewModels;
+
+public partial class MainWindowViewModel(INavigationService navigationService) : ViewModelBase
 {
-    public string Greeting { get; } = "Welcome to Avalonia!";
+    [ObservableProperty]
+    public partial ViewModelBase? CurrentPage { get; set; }
+
+    [ObservableProperty]
+    public partial NavigationItem? SelectedNavItem { get; set; }
+    
+    public IReadOnlyList<NavigationItem> NavigationItems { get; } = 
+        [new("Photos", Icon: "CameraIcon", ViewModelType: typeof(TimelineViewModel)), new("Explore", Icon: "LupenIcon", ViewModelType: typeof(ExploreViewModel))];
+
+    public void Initialize()
+    {
+        SelectedNavItem = NavigationItems[0];
+    }
+
+    partial void OnSelectedNavItemChanged(NavigationItem? value)
+    {
+        if (value != null)
+        {
+            navigationService.NavigateTo(value.ViewModelType);
+        }
+    }
 }

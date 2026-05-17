@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Polaris.Core.Interfaces;
 using Polaris.Infrastructure.DI;
 using Polaris.Ui.DI;
-using Polaris.Ui.ViewModels;
 using Polaris.Ui.Views;
 
 namespace Polaris.Ui;
@@ -31,11 +30,11 @@ public partial class App : Application
         
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            //desktop.MainWindow = Services.GetRequiredService<MainWindow>();
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = new MainWindowViewModel(),
-            };
+            desktop.MainWindow = Services.GetRequiredService<MainWindow>();
+            // desktop.MainWindow = new MainWindow
+            // {
+            //     DataContext = new MainWindowViewModel()
+            // };
         }
 
         base.OnFrameworkInitializationCompleted();

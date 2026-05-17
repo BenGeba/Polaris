@@ -1,20 +1,43 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Polaris.Ui.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:models="using:Polaris.Ui.Models"
         x:Class="Polaris.Ui.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Polaris.Ui">
+        Title="Polaris"
+        Width="1280" Height="800"
+        MinWidth="900" MinHeight="600">
 
-    <Design.DataContext>
+    <!-- <Design.DataContext> -->
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    <!--     <viewModels:MainWindowViewModel/> -->
+    <!-- </Design.DataContext> -->
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid ColumnDefinitions="220, *">
+        <!-- Sidebar -->
+        <Border Grid.Column="0" Background="{DynamicResource SidebarBackground}">
+            <DockPanel>
+                <!-- AppLogo -->
+                <TextBlock DockPanel.Dock="Top" Text="Polaris" Margin="20, 24, 20, 16" FontSize="20" FontWeight="Bold" />
+                
+                <!-- Navigation -->
+                <ListBox ItemsSource="{Binding NavigationItems}" SelectedItem="{Binding SelectedNavItem}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:NavigationItem">
+                            <StackPanel Orientation="Horizontal" Spacing="12" Margin="8, 4">
+                                <TextBlock Text="{Binding Icon}" FontSize="16" />
+                                <TextBlock Text="{Binding Title}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+        
+        <!-- Content Area -->
+        <ContentControl Grid.Column="1" Content="{Binding CurrentPage}" />
+    </Grid>
 
 </Window>
