@@ -15,6 +15,7 @@ public static class DependencyInjection
         
         services.AddTransient<TimelineViewModel>();
         services.AddTransient<ExploreViewModel>();
+        services.AddTransient<LoginViewModel>();
         // services.AddTransient<AlbumsViewModel>();
         // services.AddTransient<PeopleViewModel>();
         // services.AddTransient<MapViewModel>();

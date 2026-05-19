@@ -8,9 +8,9 @@ namespace Polaris.Ui.Services;
 public class NavigationService(IServiceProvider services)
     : INavigationService
 {
-    private MainWindowViewModel? _mainWindowViewModel;
+    private MainWindowViewModel? _shell;
 
-    private MainWindowViewModel Shell => _mainWindowViewModel ??= services.GetRequiredService<MainWindowViewModel>();
+    private MainWindowViewModel Shell => _shell ??= services.GetRequiredService<MainWindowViewModel>();
 
     public void NavigateTo<TViewModel>() where TViewModel : ViewModelBase
     {
@@ -19,7 +19,20 @@ public class NavigationService(IServiceProvider services)
 
     public void NavigateTo(Type viewModelType)
     {
-        var viewModel = services.GetService(viewModelType) as ViewModelBase ??  throw new InvalidOperationException($"ViewModel of type {viewModelType} was not found.");
+        var viewModel = services.GetService(viewModelType) as ViewModelBase ??
+                        throw new InvalidOperationException($"ViewModel of type {viewModelType} was not found.");
+
+        if (viewModelType == typeof(LoginViewModel))
+        {
+            Shell.IsShellVisible = false;
+            Shell.CurrentPage = viewModel;
+            return;
+        }
+
+        if (!Shell.IsShellVisible)
+        {
+            Shell.IsShellVisible = true;
+        }
         
         Shell.CurrentPage = viewModel;
     }

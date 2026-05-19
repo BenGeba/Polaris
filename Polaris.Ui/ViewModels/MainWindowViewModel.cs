@@ -9,6 +9,9 @@ public partial class MainWindowViewModel(INavigationService navigationService) :
 {
     [ObservableProperty]
     public partial ViewModelBase? CurrentPage { get; set; }
+    
+    [ObservableProperty]
+    public partial bool IsShellVisible { get; set; }
 
     [ObservableProperty]
     public partial NavigationItem? SelectedNavItem { get; set; }
@@ -16,16 +19,28 @@ public partial class MainWindowViewModel(INavigationService navigationService) :
     public IReadOnlyList<NavigationItem> NavigationItems { get; } = 
         [new("Photos", Icon: "CameraIcon", ViewModelType: typeof(TimelineViewModel)), new("Explore", Icon: "LupenIcon", ViewModelType: typeof(ExploreViewModel))];
 
-    public void Initialize()
-    {
-        SelectedNavItem = NavigationItems[0];
-    }
-
     partial void OnSelectedNavItemChanged(NavigationItem? value)
     {
         if (value != null)
         {
             navigationService.NavigateTo(value.ViewModelType);
         }
+    }
+
+    public void Initialize()
+    {
+        SelectedNavItem = NavigationItems[0];
+    }
+
+    public void ShowLogin()
+    {
+        IsShellVisible = false;
+        CurrentPage = null;
+    }
+
+    public void ShowShell()
+    {
+        IsShellVisible = true;
+        SelectedNavItem = NavigationItems[0];
     }
 }

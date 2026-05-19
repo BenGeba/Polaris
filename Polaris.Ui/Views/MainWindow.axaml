@@ -10,18 +10,18 @@
         MinWidth="900" MinHeight="600">
 
     <!-- <Design.DataContext> -->
-        <!-- This only sets the DataContext for the previewer in an IDE,
+    <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <!--     <viewModels:MainWindowViewModel/> -->
     <!-- </Design.DataContext> -->
 
     <Grid ColumnDefinitions="220, *">
         <!-- Sidebar -->
-        <Border Grid.Column="0" Background="{DynamicResource SidebarBackground}">
+        <Border Grid.Column="0" IsVisible="{Binding IsShellVisible}" Background="{DynamicResource SidebarBackground}">
             <DockPanel>
                 <!-- AppLogo -->
                 <TextBlock DockPanel.Dock="Top" Text="Polaris" Margin="20, 24, 20, 16" FontSize="20" FontWeight="Bold" />
-                
+
                 <!-- Navigation -->
                 <ListBox ItemsSource="{Binding NavigationItems}" SelectedItem="{Binding SelectedNavItem}">
                     <ListBox.ItemTemplate>
@@ -35,9 +35,17 @@
                 </ListBox>
             </DockPanel>
         </Border>
+
+        <!-- Content Area: Login -->
+        <ContentControl Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        IsVisible="{Binding !IsShellVisible}"
+                        Content="{Binding CurrentPage}" />
         
-        <!-- Content Area -->
-        <ContentControl Grid.Column="1" Content="{Binding CurrentPage}" />
+        <!-- Content Area: Shell -->
+        <ContentControl Grid.Column="1"
+                        IsVisible="{Binding IsShellVisible}"
+                        Content="{Binding CurrentPage}" />
     </Grid>
 
 </Window>
