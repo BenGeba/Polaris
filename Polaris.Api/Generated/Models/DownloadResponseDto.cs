@@ -23,7 +23,7 @@ namespace Polaris.Api.Client.Models
         public List<global::Polaris.Api.Client.Models.DownloadArchiveInfo> Archives { get; set; }
 #endif
         /// <summary>Total size in bytes</summary>
-        public int? TotalSize { get; set; }
+        public long? TotalSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.DownloadResponseDto"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "archives", n => { Archives = n.GetCollectionOfObjectValues<global::Polaris.Api.Client.Models.DownloadArchiveInfo>(global::Polaris.Api.Client.Models.DownloadArchiveInfo.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "totalSize", n => { TotalSize = n.GetIntValue(); } },
+                { "totalSize", n => { TotalSize = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Polaris.Api.Client.Models.DownloadArchiveInfo>("archives", Archives);
-            writer.WriteIntValue("totalSize", TotalSize);
+            writer.WriteLongValue("totalSize", TotalSize);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

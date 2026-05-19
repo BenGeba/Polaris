@@ -17,19 +17,19 @@ namespace Polaris.Api.Client.Models
         /// <summary>Asset ID</summary>
         public Guid? AssetId { get; set; }
         /// <summary>Face bounding box height</summary>
-        public int? Height { get; set; }
+        public long? Height { get; set; }
         /// <summary>Image height in pixels</summary>
-        public int? ImageHeight { get; set; }
+        public long? ImageHeight { get; set; }
         /// <summary>Image width in pixels</summary>
-        public int? ImageWidth { get; set; }
+        public long? ImageWidth { get; set; }
         /// <summary>Person ID</summary>
         public Guid? PersonId { get; set; }
         /// <summary>Face bounding box width</summary>
-        public int? Width { get; set; }
+        public long? Width { get; set; }
         /// <summary>Face bounding box X coordinate</summary>
-        public int? X { get; set; }
+        public long? X { get; set; }
         /// <summary>Face bounding box Y coordinate</summary>
-        public int? Y { get; set; }
+        public long? Y { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.AssetFaceCreateDto"/> and sets the default values.
         /// </summary>
@@ -56,13 +56,13 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assetId", n => { AssetId = n.GetGuidValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
-                { "imageHeight", n => { ImageHeight = n.GetIntValue(); } },
-                { "imageWidth", n => { ImageWidth = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetLongValue(); } },
+                { "imageHeight", n => { ImageHeight = n.GetLongValue(); } },
+                { "imageWidth", n => { ImageWidth = n.GetLongValue(); } },
                 { "personId", n => { PersonId = n.GetGuidValue(); } },
-                { "width", n => { Width = n.GetIntValue(); } },
-                { "x", n => { X = n.GetIntValue(); } },
-                { "y", n => { Y = n.GetIntValue(); } },
+                { "width", n => { Width = n.GetLongValue(); } },
+                { "x", n => { X = n.GetLongValue(); } },
+                { "y", n => { Y = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -73,13 +73,13 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("assetId", AssetId);
-            writer.WriteIntValue("height", Height);
-            writer.WriteIntValue("imageHeight", ImageHeight);
-            writer.WriteIntValue("imageWidth", ImageWidth);
+            writer.WriteLongValue("height", Height);
+            writer.WriteLongValue("imageHeight", ImageHeight);
+            writer.WriteLongValue("imageWidth", ImageWidth);
             writer.WriteGuidValue("personId", PersonId);
-            writer.WriteIntValue("width", Width);
-            writer.WriteIntValue("x", X);
-            writer.WriteIntValue("y", Y);
+            writer.WriteLongValue("width", Width);
+            writer.WriteLongValue("x", X);
+            writer.WriteLongValue("y", Y);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

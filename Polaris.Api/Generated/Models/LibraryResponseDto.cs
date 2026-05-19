@@ -15,7 +15,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of assets</summary>
-        public int? AssetCount { get; set; }
+        public long? AssetCount { get; set; }
         /// <summary>Creation date</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Exclusion patterns</summary>
@@ -87,7 +87,7 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assetCount", n => { AssetCount = n.GetIntValue(); } },
+                { "assetCount", n => { AssetCount = n.GetLongValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "exclusionPatterns", n => { ExclusionPatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -105,7 +105,7 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("assetCount", AssetCount);
+            writer.WriteLongValue("assetCount", AssetCount);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("exclusionPatterns", ExclusionPatterns);
             writer.WriteStringValue("id", Id);

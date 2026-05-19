@@ -15,9 +15,9 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of comments</summary>
-        public int? Comments { get; set; }
+        public long? Comments { get; set; }
         /// <summary>Number of likes</summary>
-        public int? Likes { get; set; }
+        public long? Likes { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.ActivityStatisticsResponseDto"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comments", n => { Comments = n.GetIntValue(); } },
-                { "likes", n => { Likes = n.GetIntValue(); } },
+                { "comments", n => { Comments = n.GetLongValue(); } },
+                { "likes", n => { Likes = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("comments", Comments);
-            writer.WriteIntValue("likes", Likes);
+            writer.WriteLongValue("comments", Comments);
+            writer.WriteLongValue("likes", Likes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -45,7 +45,7 @@ namespace Polaris.Api.Client.Models
         public string ClientSecret { get; set; }
 #endif
         /// <summary>Default storage quota</summary>
-        public int? DefaultStorageQuota { get; set; }
+        public long? DefaultStorageQuota { get; set; }
         /// <summary>Enabled</summary>
         public bool? Enabled { get; set; }
         /// <summary>End session endpoint</summary>
@@ -131,7 +131,7 @@ namespace Polaris.Api.Client.Models
         public string StorageQuotaClaim { get; set; }
 #endif
         /// <summary>Timeout</summary>
-        public int? Timeout { get; set; }
+        public long? Timeout { get; set; }
         /// <summary>OAuth token endpoint auth method</summary>
         public global::Polaris.Api.Client.Models.OAuthTokenEndpointAuthMethod? TokenEndpointAuthMethod { get; set; }
         /// <summary>
@@ -165,7 +165,7 @@ namespace Polaris.Api.Client.Models
                 { "buttonText", n => { ButtonText = n.GetStringValue(); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
-                { "defaultStorageQuota", n => { DefaultStorageQuota = n.GetIntValue(); } },
+                { "defaultStorageQuota", n => { DefaultStorageQuota = n.GetLongValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "endSessionEndpoint", n => { EndSessionEndpoint = n.GetStringValue(); } },
                 { "issuerUrl", n => { IssuerUrl = n.GetStringValue(); } },
@@ -178,7 +178,7 @@ namespace Polaris.Api.Client.Models
                 { "signingAlgorithm", n => { SigningAlgorithm = n.GetStringValue(); } },
                 { "storageLabelClaim", n => { StorageLabelClaim = n.GetStringValue(); } },
                 { "storageQuotaClaim", n => { StorageQuotaClaim = n.GetStringValue(); } },
-                { "timeout", n => { Timeout = n.GetIntValue(); } },
+                { "timeout", n => { Timeout = n.GetLongValue(); } },
                 { "tokenEndpointAuthMethod", n => { TokenEndpointAuthMethod = n.GetEnumValue<global::Polaris.Api.Client.Models.OAuthTokenEndpointAuthMethod>(); } },
             };
         }
@@ -195,7 +195,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("buttonText", ButtonText);
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientSecret", ClientSecret);
-            writer.WriteIntValue("defaultStorageQuota", DefaultStorageQuota);
+            writer.WriteLongValue("defaultStorageQuota", DefaultStorageQuota);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("endSessionEndpoint", EndSessionEndpoint);
             writer.WriteStringValue("issuerUrl", IssuerUrl);
@@ -208,7 +208,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("signingAlgorithm", SigningAlgorithm);
             writer.WriteStringValue("storageLabelClaim", StorageLabelClaim);
             writer.WriteStringValue("storageQuotaClaim", StorageQuotaClaim);
-            writer.WriteIntValue("timeout", Timeout);
+            writer.WriteLongValue("timeout", Timeout);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.OAuthTokenEndpointAuthMethod>("tokenEndpointAuthMethod", TokenEndpointAuthMethod);
             writer.WriteAdditionalData(AdditionalData);
         }

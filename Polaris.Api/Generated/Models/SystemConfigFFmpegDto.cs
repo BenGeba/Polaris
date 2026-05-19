@@ -49,7 +49,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>CRF</summary>
         public int? Crf { get; set; }
         /// <summary>GOP size</summary>
-        public int? GopSize { get; set; }
+        public long? GopSize { get; set; }
         /// <summary>Max bitrate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +91,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Temporal AQ</summary>
         public bool? TemporalAQ { get; set; }
         /// <summary>Threads</summary>
-        public int? Threads { get; set; }
+        public long? Threads { get; set; }
         /// <summary>Tone mapping</summary>
         public global::Polaris.Api.Client.Models.ToneMapping? Tonemap { get; set; }
         /// <summary>Transcode policy</summary>
@@ -131,7 +131,7 @@ namespace Polaris.Api.Client.Models
                 { "bframes", n => { Bframes = n.GetIntValue(); } },
                 { "cqMode", n => { CqMode = n.GetEnumValue<global::Polaris.Api.Client.Models.CQMode>(); } },
                 { "crf", n => { Crf = n.GetIntValue(); } },
-                { "gopSize", n => { GopSize = n.GetIntValue(); } },
+                { "gopSize", n => { GopSize = n.GetLongValue(); } },
                 { "maxBitrate", n => { MaxBitrate = n.GetStringValue(); } },
                 { "preferredHwDevice", n => { PreferredHwDevice = n.GetStringValue(); } },
                 { "preset", n => { Preset = n.GetStringValue(); } },
@@ -140,7 +140,7 @@ namespace Polaris.Api.Client.Models
                 { "targetResolution", n => { TargetResolution = n.GetStringValue(); } },
                 { "targetVideoCodec", n => { TargetVideoCodec = n.GetEnumValue<global::Polaris.Api.Client.Models.VideoCodec>(); } },
                 { "temporalAQ", n => { TemporalAQ = n.GetBoolValue(); } },
-                { "threads", n => { Threads = n.GetIntValue(); } },
+                { "threads", n => { Threads = n.GetLongValue(); } },
                 { "tonemap", n => { Tonemap = n.GetEnumValue<global::Polaris.Api.Client.Models.ToneMapping>(); } },
                 { "transcode", n => { Transcode = n.GetEnumValue<global::Polaris.Api.Client.Models.TranscodePolicy>(); } },
                 { "twoPass", n => { TwoPass = n.GetBoolValue(); } },
@@ -161,7 +161,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteIntValue("bframes", Bframes);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.CQMode>("cqMode", CqMode);
             writer.WriteIntValue("crf", Crf);
-            writer.WriteIntValue("gopSize", GopSize);
+            writer.WriteLongValue("gopSize", GopSize);
             writer.WriteStringValue("maxBitrate", MaxBitrate);
             writer.WriteStringValue("preferredHwDevice", PreferredHwDevice);
             writer.WriteStringValue("preset", Preset);
@@ -170,7 +170,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("targetResolution", TargetResolution);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.VideoCodec>("targetVideoCodec", TargetVideoCodec);
             writer.WriteBoolValue("temporalAQ", TemporalAQ);
-            writer.WriteIntValue("threads", Threads);
+            writer.WriteLongValue("threads", Threads);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.ToneMapping>("tonemap", Tonemap);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.TranscodePolicy>("transcode", Transcode);
             writer.WriteBoolValue("twoPass", TwoPass);

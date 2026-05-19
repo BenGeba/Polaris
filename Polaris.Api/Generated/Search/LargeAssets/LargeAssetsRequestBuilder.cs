@@ -162,7 +162,7 @@ namespace Polaris.Api.Client.Search.LargeAssets
 #endif
             /// <summary>Minimum file size in bytes</summary>
             [QueryParameter("minFileSize")]
-            public int? MinFileSize { get; set; }
+            public long? MinFileSize { get; set; }
             /// <summary>Filter by camera model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

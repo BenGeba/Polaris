@@ -13,19 +13,19 @@ namespace Polaris.Api.Client.Models
     #pragma warning restore CS1591
     {
         /// <summary>Number of active jobs</summary>
-        public int? Active { get; set; }
+        public long? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of completed jobs</summary>
-        public int? Completed { get; set; }
+        public long? Completed { get; set; }
         /// <summary>Number of delayed jobs</summary>
-        public int? Delayed { get; set; }
+        public long? Delayed { get; set; }
         /// <summary>Number of failed jobs</summary>
-        public int? Failed { get; set; }
+        public long? Failed { get; set; }
         /// <summary>Number of paused jobs</summary>
-        public int? Paused { get; set; }
+        public long? Paused { get; set; }
         /// <summary>Number of waiting jobs</summary>
-        public int? Waiting { get; set; }
+        public long? Waiting { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.QueueStatisticsDto"/> and sets the default values.
         /// </summary>
@@ -51,12 +51,12 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active", n => { Active = n.GetIntValue(); } },
-                { "completed", n => { Completed = n.GetIntValue(); } },
-                { "delayed", n => { Delayed = n.GetIntValue(); } },
-                { "failed", n => { Failed = n.GetIntValue(); } },
-                { "paused", n => { Paused = n.GetIntValue(); } },
-                { "waiting", n => { Waiting = n.GetIntValue(); } },
+                { "active", n => { Active = n.GetLongValue(); } },
+                { "completed", n => { Completed = n.GetLongValue(); } },
+                { "delayed", n => { Delayed = n.GetLongValue(); } },
+                { "failed", n => { Failed = n.GetLongValue(); } },
+                { "paused", n => { Paused = n.GetLongValue(); } },
+                { "waiting", n => { Waiting = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,12 +66,12 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("active", Active);
-            writer.WriteIntValue("completed", Completed);
-            writer.WriteIntValue("delayed", Delayed);
-            writer.WriteIntValue("failed", Failed);
-            writer.WriteIntValue("paused", Paused);
-            writer.WriteIntValue("waiting", Waiting);
+            writer.WriteLongValue("active", Active);
+            writer.WriteLongValue("completed", Completed);
+            writer.WriteLongValue("delayed", Delayed);
+            writer.WriteLongValue("failed", Failed);
+            writer.WriteLongValue("paused", Paused);
+            writer.WriteLongValue("waiting", Waiting);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

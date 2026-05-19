@@ -39,7 +39,7 @@ namespace Polaris.Api.Client.Models
         public List<global::Polaris.Api.Client.Models.AlbumUserResponseDto> AlbumUsers { get; set; }
 #endif
         /// <summary>Number of assets</summary>
-        public int? AssetCount { get; set; }
+        public long? AssetCount { get; set; }
         /// <summary>The contributorCounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +110,7 @@ namespace Polaris.Api.Client.Models
                 { "albumName", n => { AlbumName = n.GetStringValue(); } },
                 { "albumThumbnailAssetId", n => { AlbumThumbnailAssetId = n.GetStringValue(); } },
                 { "albumUsers", n => { AlbumUsers = n.GetCollectionOfObjectValues<global::Polaris.Api.Client.Models.AlbumUserResponseDto>(global::Polaris.Api.Client.Models.AlbumUserResponseDto.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "assetCount", n => { AssetCount = n.GetIntValue(); } },
+                { "assetCount", n => { AssetCount = n.GetLongValue(); } },
                 { "contributorCounts", n => { ContributorCounts = n.GetCollectionOfObjectValues<global::Polaris.Api.Client.Models.ContributorCountResponseDto>(global::Polaris.Api.Client.Models.ContributorCountResponseDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -135,7 +135,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("albumName", AlbumName);
             writer.WriteStringValue("albumThumbnailAssetId", AlbumThumbnailAssetId);
             writer.WriteCollectionOfObjectValues<global::Polaris.Api.Client.Models.AlbumUserResponseDto>("albumUsers", AlbumUsers);
-            writer.WriteIntValue("assetCount", AssetCount);
+            writer.WriteLongValue("assetCount", AssetCount);
             writer.WriteCollectionOfObjectValues<global::Polaris.Api.Client.Models.ContributorCountResponseDto>("contributorCounts", ContributorCounts);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);

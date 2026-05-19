@@ -49,7 +49,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Whether asset has metadata</summary>
         public bool? HasMetadata { get; set; }
         /// <summary>Asset height</summary>
-        public int? Height { get; set; }
+        public long? Height { get; set; }
         /// <summary>Asset ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,7 +161,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Asset visibility</summary>
         public global::Polaris.Api.Client.Models.AssetVisibility? Visibility { get; set; }
         /// <summary>Asset width</summary>
-        public int? Width { get; set; }
+        public long? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.AssetResponseDto"/> and sets the default values.
         /// </summary>
@@ -195,7 +195,7 @@ namespace Polaris.Api.Client.Models
                 { "fileCreatedAt", n => { FileCreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "fileModifiedAt", n => { FileModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "hasMetadata", n => { HasMetadata = n.GetBoolValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isEdited", n => { IsEdited = n.GetBoolValue(); } },
@@ -218,7 +218,7 @@ namespace Polaris.Api.Client.Models
                 { "type", n => { Type = n.GetEnumValue<global::Polaris.Api.Client.Models.AssetTypeEnum>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "visibility", n => { Visibility = n.GetEnumValue<global::Polaris.Api.Client.Models.AssetVisibility>(); } },
-                { "width", n => { Width = n.GetIntValue(); } },
+                { "width", n => { Width = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -236,7 +236,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteDateTimeOffsetValue("fileCreatedAt", FileCreatedAt);
             writer.WriteDateTimeOffsetValue("fileModifiedAt", FileModifiedAt);
             writer.WriteBoolValue("hasMetadata", HasMetadata);
-            writer.WriteIntValue("height", Height);
+            writer.WriteLongValue("height", Height);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isEdited", IsEdited);
@@ -259,7 +259,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.AssetTypeEnum>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.AssetVisibility>("visibility", Visibility);
-            writer.WriteIntValue("width", Width);
+            writer.WriteLongValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

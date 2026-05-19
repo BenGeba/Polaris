@@ -23,7 +23,7 @@ namespace Polaris.Api.Client.Models
         public List<string> AssetIds { get; set; }
 #endif
         /// <summary>Archive size in bytes</summary>
-        public int? Size { get; set; }
+        public long? Size { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.DownloadArchiveInfo"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assetIds", n => { AssetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "size", n => { Size = n.GetIntValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("assetIds", AssetIds);
-            writer.WriteIntValue("size", Size);
+            writer.WriteLongValue("size", Size);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

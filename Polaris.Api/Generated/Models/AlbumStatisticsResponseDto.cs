@@ -15,11 +15,11 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of non-shared albums</summary>
-        public int? NotShared { get; set; }
+        public long? NotShared { get; set; }
         /// <summary>Number of owned albums</summary>
-        public int? Owned { get; set; }
+        public long? Owned { get; set; }
         /// <summary>Number of shared albums</summary>
-        public int? Shared { get; set; }
+        public long? Shared { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.AlbumStatisticsResponseDto"/> and sets the default values.
         /// </summary>
@@ -45,9 +45,9 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notShared", n => { NotShared = n.GetIntValue(); } },
-                { "owned", n => { Owned = n.GetIntValue(); } },
-                { "shared", n => { Shared = n.GetIntValue(); } },
+                { "notShared", n => { NotShared = n.GetLongValue(); } },
+                { "owned", n => { Owned = n.GetLongValue(); } },
+                { "shared", n => { Shared = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("notShared", NotShared);
-            writer.WriteIntValue("owned", Owned);
-            writer.WriteIntValue("shared", Shared);
+            writer.WriteLongValue("notShared", NotShared);
+            writer.WriteLongValue("owned", Owned);
+            writer.WriteLongValue("shared", Shared);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

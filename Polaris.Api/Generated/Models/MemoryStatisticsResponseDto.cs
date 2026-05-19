@@ -15,7 +15,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of memories</summary>
-        public int? Total { get; set; }
+        public long? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.MemoryStatisticsResponseDto"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "total", n => { Total = n.GetIntValue(); } },
+                { "total", n => { Total = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("total", Total);
+            writer.WriteLongValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

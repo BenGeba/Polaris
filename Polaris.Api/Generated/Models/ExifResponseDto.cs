@@ -42,9 +42,9 @@ namespace Polaris.Api.Client.Models
         public string Description { get; set; }
 #endif
         /// <summary>Image height in pixels</summary>
-        public int? ExifImageHeight { get; set; }
+        public long? ExifImageHeight { get; set; }
         /// <summary>Image width in pixels</summary>
-        public int? ExifImageWidth { get; set; }
+        public long? ExifImageWidth { get; set; }
         /// <summary>Exposure time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,13 +54,13 @@ namespace Polaris.Api.Client.Models
         public string ExposureTime { get; set; }
 #endif
         /// <summary>File size in bytes</summary>
-        public int? FileSizeInByte { get; set; }
+        public long? FileSizeInByte { get; set; }
         /// <summary>F-number (aperture)</summary>
         public double? FNumber { get; set; }
         /// <summary>Focal length in mm</summary>
         public double? FocalLength { get; set; }
         /// <summary>ISO sensitivity</summary>
-        public int? Iso { get; set; }
+        public long? Iso { get; set; }
         /// <summary>GPS latitude</summary>
         public double? Latitude { get; set; }
         /// <summary>Lens model</summary>
@@ -108,7 +108,7 @@ namespace Polaris.Api.Client.Models
         public string ProjectionType { get; set; }
 #endif
         /// <summary>Rating</summary>
-        public int? Rating { get; set; }
+        public long? Rating { get; set; }
         /// <summary>State/province name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,13 +154,13 @@ namespace Polaris.Api.Client.Models
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "dateTimeOriginal", n => { DateTimeOriginal = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "exifImageHeight", n => { ExifImageHeight = n.GetIntValue(); } },
-                { "exifImageWidth", n => { ExifImageWidth = n.GetIntValue(); } },
+                { "exifImageHeight", n => { ExifImageHeight = n.GetLongValue(); } },
+                { "exifImageWidth", n => { ExifImageWidth = n.GetLongValue(); } },
                 { "exposureTime", n => { ExposureTime = n.GetStringValue(); } },
                 { "fNumber", n => { FNumber = n.GetDoubleValue(); } },
-                { "fileSizeInByte", n => { FileSizeInByte = n.GetIntValue(); } },
+                { "fileSizeInByte", n => { FileSizeInByte = n.GetLongValue(); } },
                 { "focalLength", n => { FocalLength = n.GetDoubleValue(); } },
-                { "iso", n => { Iso = n.GetIntValue(); } },
+                { "iso", n => { Iso = n.GetLongValue(); } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "lensModel", n => { LensModel = n.GetStringValue(); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
@@ -169,7 +169,7 @@ namespace Polaris.Api.Client.Models
                 { "modifyDate", n => { ModifyDate = n.GetDateTimeOffsetValue(); } },
                 { "orientation", n => { Orientation = n.GetStringValue(); } },
                 { "projectionType", n => { ProjectionType = n.GetStringValue(); } },
-                { "rating", n => { Rating = n.GetIntValue(); } },
+                { "rating", n => { Rating = n.GetLongValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
@@ -185,13 +185,13 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("country", Country);
             writer.WriteDateTimeOffsetValue("dateTimeOriginal", DateTimeOriginal);
             writer.WriteStringValue("description", Description);
-            writer.WriteIntValue("exifImageHeight", ExifImageHeight);
-            writer.WriteIntValue("exifImageWidth", ExifImageWidth);
+            writer.WriteLongValue("exifImageHeight", ExifImageHeight);
+            writer.WriteLongValue("exifImageWidth", ExifImageWidth);
             writer.WriteStringValue("exposureTime", ExposureTime);
-            writer.WriteIntValue("fileSizeInByte", FileSizeInByte);
+            writer.WriteLongValue("fileSizeInByte", FileSizeInByte);
             writer.WriteDoubleValue("fNumber", FNumber);
             writer.WriteDoubleValue("focalLength", FocalLength);
-            writer.WriteIntValue("iso", Iso);
+            writer.WriteLongValue("iso", Iso);
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteStringValue("lensModel", LensModel);
             writer.WriteDoubleValue("longitude", Longitude);
@@ -200,7 +200,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteDateTimeOffsetValue("modifyDate", ModifyDate);
             writer.WriteStringValue("orientation", Orientation);
             writer.WriteStringValue("projectionType", ProjectionType);
-            writer.WriteIntValue("rating", Rating);
+            writer.WriteLongValue("rating", Rating);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteAdditionalData(AdditionalData);

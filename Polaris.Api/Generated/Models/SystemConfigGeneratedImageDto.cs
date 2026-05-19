@@ -21,7 +21,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Quality</summary>
         public int? Quality { get; set; }
         /// <summary>Size</summary>
-        public int? Size { get; set; }
+        public long? Size { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.SystemConfigGeneratedImageDto"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Polaris.Api.Client.Models
                 { "format", n => { Format = n.GetEnumValue<global::Polaris.Api.Client.Models.ImageFormat>(); } },
                 { "progressive", n => { Progressive = n.GetBoolValue(); } },
                 { "quality", n => { Quality = n.GetIntValue(); } },
-                { "size", n => { Size = n.GetIntValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.ImageFormat>("format", Format);
             writer.WriteBoolValue("progressive", Progressive);
             writer.WriteIntValue("quality", Quality);
-            writer.WriteIntValue("size", Size);
+            writer.WriteLongValue("size", Size);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

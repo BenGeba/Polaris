@@ -31,7 +31,7 @@ namespace Polaris.Api.Client.Models
         public string DeviceType { get; set; }
 #endif
         /// <summary>Session duration in seconds</summary>
-        public int? Duration { get; set; }
+        public long? Duration { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.SessionCreateDto"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Polaris.Api.Client.Models
             {
                 { "deviceOS", n => { DeviceOS = n.GetStringValue(); } },
                 { "deviceType", n => { DeviceType = n.GetStringValue(); } },
-                { "duration", n => { Duration = n.GetIntValue(); } },
+                { "duration", n => { Duration = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Polaris.Api.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deviceOS", DeviceOS);
             writer.WriteStringValue("deviceType", DeviceType);
-            writer.WriteIntValue("duration", Duration);
+            writer.WriteLongValue("duration", Duration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

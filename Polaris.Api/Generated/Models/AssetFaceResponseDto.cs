@@ -16,19 +16,19 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bounding box X1 coordinate</summary>
-        public int? BoundingBoxX1 { get; set; }
+        public long? BoundingBoxX1 { get; set; }
         /// <summary>Bounding box X2 coordinate</summary>
-        public int? BoundingBoxX2 { get; set; }
+        public long? BoundingBoxX2 { get; set; }
         /// <summary>Bounding box Y1 coordinate</summary>
-        public int? BoundingBoxY1 { get; set; }
+        public long? BoundingBoxY1 { get; set; }
         /// <summary>Bounding box Y2 coordinate</summary>
-        public int? BoundingBoxY2 { get; set; }
+        public long? BoundingBoxY2 { get; set; }
         /// <summary>Face ID</summary>
         public Guid? Id { get; set; }
         /// <summary>Image height in pixels</summary>
-        public int? ImageHeight { get; set; }
+        public long? ImageHeight { get; set; }
         /// <summary>Image width in pixels</summary>
-        public int? ImageWidth { get; set; }
+        public long? ImageWidth { get; set; }
         /// <summary>The person property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,13 +64,13 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "boundingBoxX1", n => { BoundingBoxX1 = n.GetIntValue(); } },
-                { "boundingBoxX2", n => { BoundingBoxX2 = n.GetIntValue(); } },
-                { "boundingBoxY1", n => { BoundingBoxY1 = n.GetIntValue(); } },
-                { "boundingBoxY2", n => { BoundingBoxY2 = n.GetIntValue(); } },
+                { "boundingBoxX1", n => { BoundingBoxX1 = n.GetLongValue(); } },
+                { "boundingBoxX2", n => { BoundingBoxX2 = n.GetLongValue(); } },
+                { "boundingBoxY1", n => { BoundingBoxY1 = n.GetLongValue(); } },
+                { "boundingBoxY2", n => { BoundingBoxY2 = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "imageHeight", n => { ImageHeight = n.GetIntValue(); } },
-                { "imageWidth", n => { ImageWidth = n.GetIntValue(); } },
+                { "imageHeight", n => { ImageHeight = n.GetLongValue(); } },
+                { "imageWidth", n => { ImageWidth = n.GetLongValue(); } },
                 { "person", n => { Person = n.GetObjectValue<global::Polaris.Api.Client.Models.PersonResponseDto>(global::Polaris.Api.Client.Models.PersonResponseDto.CreateFromDiscriminatorValue); } },
                 { "sourceType", n => { SourceType = n.GetEnumValue<global::Polaris.Api.Client.Models.SourceType>(); } },
             };
@@ -82,13 +82,13 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("boundingBoxX1", BoundingBoxX1);
-            writer.WriteIntValue("boundingBoxX2", BoundingBoxX2);
-            writer.WriteIntValue("boundingBoxY1", BoundingBoxY1);
-            writer.WriteIntValue("boundingBoxY2", BoundingBoxY2);
+            writer.WriteLongValue("boundingBoxX1", BoundingBoxX1);
+            writer.WriteLongValue("boundingBoxX2", BoundingBoxX2);
+            writer.WriteLongValue("boundingBoxY1", BoundingBoxY1);
+            writer.WriteLongValue("boundingBoxY2", BoundingBoxY2);
             writer.WriteGuidValue("id", Id);
-            writer.WriteIntValue("imageHeight", ImageHeight);
-            writer.WriteIntValue("imageWidth", ImageWidth);
+            writer.WriteLongValue("imageHeight", ImageHeight);
+            writer.WriteLongValue("imageWidth", ImageWidth);
             writer.WriteObjectValue<global::Polaris.Api.Client.Models.PersonResponseDto>("person", Person);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.SourceType>("sourceType", SourceType);
             writer.WriteAdditionalData(AdditionalData);

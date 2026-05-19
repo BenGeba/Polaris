@@ -23,7 +23,7 @@ namespace Polaris.Api.Client.Models
         public string Filename { get; set; }
 #endif
         /// <summary>Backup file size</summary>
-        public int? Filesize { get; set; }
+        public long? Filesize { get; set; }
         /// <summary>Backup timezone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filename", n => { Filename = n.GetStringValue(); } },
-                { "filesize", n => { Filesize = n.GetIntValue(); } },
+                { "filesize", n => { Filesize = n.GetLongValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("filename", Filename);
-            writer.WriteIntValue("filesize", Filesize);
+            writer.WriteLongValue("filesize", Filesize);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteAdditionalData(AdditionalData);
         }

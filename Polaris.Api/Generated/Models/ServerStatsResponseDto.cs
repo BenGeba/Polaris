@@ -15,9 +15,9 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of photos</summary>
-        public int? Photos { get; set; }
+        public long? Photos { get; set; }
         /// <summary>Total storage usage in bytes</summary>
-        public int? Usage { get; set; }
+        public long? Usage { get; set; }
         /// <summary>Array of usage for each user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,11 +27,11 @@ namespace Polaris.Api.Client.Models
         public List<global::Polaris.Api.Client.Models.UsageByUserDto> UsageByUser { get; set; }
 #endif
         /// <summary>Storage usage for photos in bytes</summary>
-        public int? UsagePhotos { get; set; }
+        public long? UsagePhotos { get; set; }
         /// <summary>Storage usage for videos in bytes</summary>
-        public int? UsageVideos { get; set; }
+        public long? UsageVideos { get; set; }
         /// <summary>Total number of videos</summary>
-        public int? Videos { get; set; }
+        public long? Videos { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.ServerStatsResponseDto"/> and sets the default values.
         /// </summary>
@@ -57,12 +57,12 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "photos", n => { Photos = n.GetIntValue(); } },
-                { "usage", n => { Usage = n.GetIntValue(); } },
+                { "photos", n => { Photos = n.GetLongValue(); } },
+                { "usage", n => { Usage = n.GetLongValue(); } },
                 { "usageByUser", n => { UsageByUser = n.GetCollectionOfObjectValues<global::Polaris.Api.Client.Models.UsageByUserDto>(global::Polaris.Api.Client.Models.UsageByUserDto.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "usagePhotos", n => { UsagePhotos = n.GetIntValue(); } },
-                { "usageVideos", n => { UsageVideos = n.GetIntValue(); } },
-                { "videos", n => { Videos = n.GetIntValue(); } },
+                { "usagePhotos", n => { UsagePhotos = n.GetLongValue(); } },
+                { "usageVideos", n => { UsageVideos = n.GetLongValue(); } },
+                { "videos", n => { Videos = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -72,12 +72,12 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("photos", Photos);
-            writer.WriteIntValue("usage", Usage);
+            writer.WriteLongValue("photos", Photos);
+            writer.WriteLongValue("usage", Usage);
             writer.WriteCollectionOfObjectValues<global::Polaris.Api.Client.Models.UsageByUserDto>("usageByUser", UsageByUser);
-            writer.WriteIntValue("usagePhotos", UsagePhotos);
-            writer.WriteIntValue("usageVideos", UsageVideos);
-            writer.WriteIntValue("videos", Videos);
+            writer.WriteLongValue("usagePhotos", UsagePhotos);
+            writer.WriteLongValue("usageVideos", UsageVideos);
+            writer.WriteLongValue("videos", Videos);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

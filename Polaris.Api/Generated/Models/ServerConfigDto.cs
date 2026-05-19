@@ -63,9 +63,9 @@ namespace Polaris.Api.Client.Models
         /// <summary>Whether public user registration is enabled</summary>
         public bool? PublicUsers { get; set; }
         /// <summary>Number of days before trashed assets are permanently deleted</summary>
-        public int? TrashDays { get; set; }
+        public long? TrashDays { get; set; }
         /// <summary>Delay in days before deleted users are permanently removed</summary>
-        public int? UserDeleteDelay { get; set; }
+        public long? UserDeleteDelay { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.ServerConfigDto"/> and sets the default values.
         /// </summary>
@@ -100,8 +100,8 @@ namespace Polaris.Api.Client.Models
                 { "mapLightStyleUrl", n => { MapLightStyleUrl = n.GetStringValue(); } },
                 { "oauthButtonText", n => { OauthButtonText = n.GetStringValue(); } },
                 { "publicUsers", n => { PublicUsers = n.GetBoolValue(); } },
-                { "trashDays", n => { TrashDays = n.GetIntValue(); } },
-                { "userDeleteDelay", n => { UserDeleteDelay = n.GetIntValue(); } },
+                { "trashDays", n => { TrashDays = n.GetLongValue(); } },
+                { "userDeleteDelay", n => { UserDeleteDelay = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -120,8 +120,8 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("mapLightStyleUrl", MapLightStyleUrl);
             writer.WriteStringValue("oauthButtonText", OauthButtonText);
             writer.WriteBoolValue("publicUsers", PublicUsers);
-            writer.WriteIntValue("trashDays", TrashDays);
-            writer.WriteIntValue("userDeleteDelay", UserDeleteDelay);
+            writer.WriteLongValue("trashDays", TrashDays);
+            writer.WriteLongValue("userDeleteDelay", UserDeleteDelay);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

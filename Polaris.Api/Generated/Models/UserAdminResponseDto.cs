@@ -67,9 +67,9 @@ namespace Polaris.Api.Client.Models
         public string ProfileImagePath { get; set; }
 #endif
         /// <summary>Storage quota in bytes</summary>
-        public int? QuotaSizeInBytes { get; set; }
+        public long? QuotaSizeInBytes { get; set; }
         /// <summary>Storage usage in bytes</summary>
-        public int? QuotaUsageInBytes { get; set; }
+        public long? QuotaUsageInBytes { get; set; }
         /// <summary>Require password change on next login</summary>
         public bool? ShouldChangePassword { get; set; }
         /// <summary>User status</summary>
@@ -120,8 +120,8 @@ namespace Polaris.Api.Client.Models
                 { "oauthId", n => { OauthId = n.GetStringValue(); } },
                 { "profileChangedAt", n => { ProfileChangedAt = n.GetDateTimeOffsetValue(); } },
                 { "profileImagePath", n => { ProfileImagePath = n.GetStringValue(); } },
-                { "quotaSizeInBytes", n => { QuotaSizeInBytes = n.GetIntValue(); } },
-                { "quotaUsageInBytes", n => { QuotaUsageInBytes = n.GetIntValue(); } },
+                { "quotaSizeInBytes", n => { QuotaSizeInBytes = n.GetLongValue(); } },
+                { "quotaUsageInBytes", n => { QuotaUsageInBytes = n.GetLongValue(); } },
                 { "shouldChangePassword", n => { ShouldChangePassword = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Polaris.Api.Client.Models.UserStatus>(); } },
                 { "storageLabel", n => { StorageLabel = n.GetStringValue(); } },
@@ -146,8 +146,8 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("oauthId", OauthId);
             writer.WriteDateTimeOffsetValue("profileChangedAt", ProfileChangedAt);
             writer.WriteStringValue("profileImagePath", ProfileImagePath);
-            writer.WriteIntValue("quotaSizeInBytes", QuotaSizeInBytes);
-            writer.WriteIntValue("quotaUsageInBytes", QuotaUsageInBytes);
+            writer.WriteLongValue("quotaSizeInBytes", QuotaSizeInBytes);
+            writer.WriteLongValue("quotaUsageInBytes", QuotaUsageInBytes);
             writer.WriteBoolValue("shouldChangePassword", ShouldChangePassword);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.UserStatus>("status", Status);
             writer.WriteStringValue("storageLabel", StorageLabel);

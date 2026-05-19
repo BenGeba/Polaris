@@ -15,11 +15,11 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Major version number</summary>
-        public int? Major { get; set; }
+        public long? Major { get; set; }
         /// <summary>Minor version number</summary>
-        public int? Minor { get; set; }
+        public long? Minor { get; set; }
         /// <summary>Patch version number</summary>
-        public int? Patch { get; set; }
+        public long? Patch { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.ServerVersionResponseDto"/> and sets the default values.
         /// </summary>
@@ -45,9 +45,9 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "major", n => { Major = n.GetIntValue(); } },
-                { "minor", n => { Minor = n.GetIntValue(); } },
-                { "patch", n => { Patch = n.GetIntValue(); } },
+                { "major", n => { Major = n.GetLongValue(); } },
+                { "minor", n => { Minor = n.GetLongValue(); } },
+                { "patch", n => { Patch = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("major", Major);
-            writer.WriteIntValue("minor", Minor);
-            writer.WriteIntValue("patch", Patch);
+            writer.WriteLongValue("major", Major);
+            writer.WriteLongValue("minor", Minor);
+            writer.WriteLongValue("patch", Patch);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

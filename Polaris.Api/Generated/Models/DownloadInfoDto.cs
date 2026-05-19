@@ -17,7 +17,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Album ID to download</summary>
         public Guid? AlbumId { get; set; }
         /// <summary>Archive size limit in bytes</summary>
-        public int? ArchiveSize { get; set; }
+        public long? ArchiveSize { get; set; }
         /// <summary>Asset IDs to download</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +54,7 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "albumId", n => { AlbumId = n.GetGuidValue(); } },
-                { "archiveSize", n => { ArchiveSize = n.GetIntValue(); } },
+                { "archiveSize", n => { ArchiveSize = n.GetLongValue(); } },
                 { "assetIds", n => { AssetIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "userId", n => { UserId = n.GetGuidValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("albumId", AlbumId);
-            writer.WriteIntValue("archiveSize", ArchiveSize);
+            writer.WriteLongValue("archiveSize", ArchiveSize);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("assetIds", AssetIds);
             writer.WriteGuidValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);

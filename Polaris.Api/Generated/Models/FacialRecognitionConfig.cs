@@ -19,7 +19,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Maximum distance threshold for face recognition</summary>
         public double? MaxDistance { get; set; }
         /// <summary>Minimum number of faces required for recognition</summary>
-        public int? MinFaces { get; set; }
+        public long? MinFaces { get; set; }
         /// <summary>Minimum confidence score for face detection</summary>
         public double? MinScore { get; set; }
         /// <summary>Name of the model to use</summary>
@@ -57,7 +57,7 @@ namespace Polaris.Api.Client.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "maxDistance", n => { MaxDistance = n.GetDoubleValue(); } },
-                { "minFaces", n => { MinFaces = n.GetIntValue(); } },
+                { "minFaces", n => { MinFaces = n.GetLongValue(); } },
                 { "minScore", n => { MinScore = n.GetDoubleValue(); } },
                 { "modelName", n => { ModelName = n.GetStringValue(); } },
             };
@@ -71,7 +71,7 @@ namespace Polaris.Api.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("maxDistance", MaxDistance);
-            writer.WriteIntValue("minFaces", MinFaces);
+            writer.WriteLongValue("minFaces", MinFaces);
             writer.WriteDoubleValue("minScore", MinScore);
             writer.WriteStringValue("modelName", ModelName);
             writer.WriteAdditionalData(AdditionalData);

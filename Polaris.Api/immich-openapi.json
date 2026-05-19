@@ -1,4 +1,4 @@
-﻿{
+{
   "openapi": "3.0.0",
   "paths": {
     "/activities": {
@@ -6178,7 +6178,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -6354,7 +6354,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -6392,7 +6392,8 @@
             "schema": {
               "minimum": 1,
               "maximum": 9007199254740991,
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           {
@@ -6523,7 +6524,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -6561,7 +6562,8 @@
             "schema": {
               "minimum": 1,
               "maximum": 9007199254740991,
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           {
@@ -7975,7 +7977,8 @@
               "minimum": 1,
               "maximum": 9007199254740991,
               "default": 1,
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           {
@@ -9223,7 +9226,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -9235,7 +9238,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -9324,7 +9327,8 @@
             "schema": {
               "minimum": 0,
               "maximum": 9007199254740991,
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           {
@@ -9432,7 +9436,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -9444,7 +9448,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -9456,7 +9460,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -9468,7 +9472,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -9488,7 +9492,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -9500,7 +9504,7 @@
             "schema": {
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
-              "example": "2024-01-01T00:00:00.000Z",
+              "example": "2024-01-01T00:00:00Z",
               "type": "string"
             }
           },
@@ -15219,7 +15223,7 @@
           },
           "createdAt": {
             "description": "Creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -15252,13 +15256,15 @@
             "description": "Number of comments",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "likes": {
             "description": "Number of likes",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -15318,7 +15324,8 @@
             "description": "Number of assets",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "contributorCounts": {
             "items": {
@@ -15396,19 +15403,22 @@
             "description": "Number of non-shared albums",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "owned": {
             "description": "Number of owned albums",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "shared": {
             "description": "Number of shared albums",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -15581,7 +15591,7 @@
         "properties": {
           "createdAt": {
             "description": "Creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -15603,7 +15613,7 @@
           },
           "updatedAt": {
             "description": "Last update date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -15666,7 +15676,8 @@
             "description": "Relative time offset in seconds",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "description": {
             "description": "Asset description",
@@ -15976,19 +15987,22 @@
             "description": "Face bounding box height",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "imageHeight": {
             "description": "Image height in pixels",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "imageWidth": {
             "description": "Image width in pixels",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "personId": {
             "description": "Person ID",
@@ -16000,19 +16014,22 @@
             "description": "Face bounding box width",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "x": {
             "description": "Face bounding box X coordinate",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "y": {
             "description": "Face bounding box Y coordinate",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -16046,25 +16063,29 @@
             "description": "Bounding box X1 coordinate",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxX2": {
             "description": "Bounding box X2 coordinate",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxY1": {
             "description": "Bounding box Y1 coordinate",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxY2": {
             "description": "Bounding box Y2 coordinate",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "description": "Face ID",
@@ -16076,13 +16097,15 @@
             "description": "Image height in pixels",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "imageWidth": {
             "description": "Image width in pixels",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "person": {
             "allOf": [
@@ -16232,18 +16255,19 @@
             "description": "Duration in milliseconds (for videos)",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "fileCreatedAt": {
             "description": "File creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "fileModifiedAt": {
             "description": "File modification date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -16365,7 +16389,7 @@
           },
           "updatedAt": {
             "description": "Last update date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -16432,7 +16456,7 @@
           },
           "updatedAt": {
             "description": "Last update date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -16636,7 +16660,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "description": "Asset ID",
@@ -16776,7 +16801,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -16811,7 +16837,8 @@
             "description": "Number of assets in stack",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "description": "Stack ID",
@@ -16835,19 +16862,22 @@
             "description": "Number of images",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "total": {
             "description": "Total number of assets",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "videos": {
             "description": "Number of videos",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -17070,7 +17100,8 @@
             "description": "Number of assets contributed",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "userId": {
             "description": "User ID",
@@ -17167,7 +17198,7 @@
         "properties": {
           "profileChangedAt": {
             "description": "Profile image change date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -17194,25 +17225,29 @@
             "description": "Height of the crop",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "width": {
             "description": "Width of the crop",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "x": {
             "description": "Top-Left X coordinate of crop",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "y": {
             "description": "Top-Left Y coordinate of crop",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -17238,7 +17273,8 @@
             "description": "Keep last amount",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -17273,7 +17309,8 @@
             "description": "Backup file size",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "timezone": {
             "description": "Backup timezone",
@@ -17346,7 +17383,8 @@
             "description": "Archive size in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -17367,7 +17405,8 @@
             "description": "Archive size limit in bytes",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "assetIds": {
             "description": "Asset IDs to download",
@@ -17393,7 +17432,8 @@
             "description": "Maximum archive size in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "includeEmbeddedVideos": {
             "description": "Whether to include embedded videos in downloads",
@@ -17419,7 +17459,8 @@
             "description": "Total size in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -17434,7 +17475,8 @@
             "description": "Maximum archive size in bytes",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "includeEmbeddedVideos": {
             "description": "Whether to include embedded videos in downloads",
@@ -17615,7 +17657,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "exifImageWidth": {
             "default": null,
@@ -17623,7 +17666,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "exposureTime": {
             "default": null,
@@ -17643,7 +17687,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "focalLength": {
             "default": null,
@@ -17657,7 +17702,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "latitude": {
             "default": null,
@@ -17714,7 +17760,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "state": {
             "default": null,
@@ -17762,7 +17809,8 @@
             "description": "Minimum number of faces required for recognition",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "minScore": {
             "description": "Minimum confidence score for face detection",
@@ -17901,7 +17949,8 @@
             "description": "Concurrency",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -17915,11 +17964,12 @@
             "description": "Number of assets",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "createdAt": {
             "description": "Creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -17952,7 +18002,7 @@
           },
           "refreshedAt": {
             "description": "Last refresh date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -17960,7 +18010,7 @@
           },
           "updatedAt": {
             "description": "Last update date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -17985,25 +18035,29 @@
             "description": "Number of photos",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "total": {
             "description": "Total number of assets",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "usage": {
             "description": "Storage usage in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "videos": {
             "description": "Number of videos",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -18143,12 +18197,14 @@
           "interval": {
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "timeout": {
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -18200,7 +18256,8 @@
             "description": "Number of files in the folder",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "folder": {
             "$ref": "#/components/schemas/StorageFolder"
@@ -18245,7 +18302,8 @@
           "progress": {
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "task": {
             "type": "string"
@@ -18342,7 +18400,8 @@
             "description": "Memory duration in seconds",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "enabled": {
             "description": "Whether memories are enabled",
@@ -18361,7 +18420,8 @@
             "description": "Memory duration in seconds",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "enabled": {
             "description": "Whether memories are enabled",
@@ -18386,7 +18446,7 @@
           },
           "hideAt": {
             "description": "Date when memory should be hidden",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string",
@@ -18408,21 +18468,21 @@
           },
           "memoryAt": {
             "description": "Memory date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "seenAt": {
             "description": "Date when memory was seen",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "showAt": {
             "description": "Date when memory should be shown",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string",
@@ -18459,7 +18519,7 @@
           },
           "createdAt": {
             "description": "Creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18469,14 +18529,14 @@
           },
           "deletedAt": {
             "description": "Deletion date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "hideAt": {
             "description": "Date when memory should be hidden",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18491,7 +18551,7 @@
           },
           "memoryAt": {
             "description": "Memory date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18502,14 +18562,14 @@
           },
           "seenAt": {
             "description": "Date when memory was seen",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "showAt": {
             "description": "Date when memory should be shown",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18519,7 +18579,7 @@
           },
           "updatedAt": {
             "description": "Last update date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18553,7 +18613,8 @@
             "description": "Total number of memories",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -18576,14 +18637,14 @@
           },
           "memoryAt": {
             "description": "Memory date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "seenAt": {
             "description": "Date when memory was seen",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18635,14 +18696,14 @@
           },
           "createdAfter": {
             "description": "Filter by creation date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "createdBefore": {
             "description": "Filter by creation date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18724,7 +18785,8 @@
             "description": "Page number",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "personIds": {
             "description": "Filter by person IDs",
@@ -18785,14 +18847,14 @@
           },
           "takenAfter": {
             "description": "Filter by taken date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "takenBefore": {
             "description": "Filter by taken date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18803,14 +18865,14 @@
           },
           "trashedAfter": {
             "description": "Filter by trash date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "trashedBefore": {
             "description": "Filter by trash date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18820,14 +18882,14 @@
           },
           "updatedAfter": {
             "description": "Filter by update date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "updatedBefore": {
             "description": "Filter by update date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18890,7 +18952,7 @@
           },
           "readAt": {
             "description": "Date when notification was read",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -18938,7 +19000,7 @@
         "properties": {
           "createdAt": {
             "description": "Creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -18961,7 +19023,7 @@
           },
           "readAt": {
             "description": "Date when notification was read",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -19019,7 +19081,7 @@
           },
           "readAt": {
             "description": "Date when notifications were read",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -19035,7 +19097,7 @@
         "properties": {
           "readAt": {
             "description": "Date when notification was read",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -19127,7 +19189,8 @@
             "description": "Maximum resolution for OCR processing",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "minDetectionScore": {
             "description": "Minimum confidence score for text detection",
@@ -19314,7 +19377,8 @@
             "description": "Number of hidden people",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "people": {
             "items": {
@@ -19326,7 +19390,8 @@
             "description": "Total number of people",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -19682,7 +19747,8 @@
             "description": "Number of assets",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -20180,7 +20246,8 @@
             "description": "Job creation timestamp",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -20267,37 +20334,43 @@
             "description": "Number of active jobs",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "completed": {
             "description": "Number of completed jobs",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "delayed": {
             "description": "Number of delayed jobs",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "failed": {
             "description": "Number of failed jobs",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "paused": {
             "description": "Number of paused jobs",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "waiting": {
             "description": "Number of waiting jobs",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -20438,14 +20511,14 @@
           },
           "createdAfter": {
             "description": "Filter by creation date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "createdBefore": {
             "description": "Filter by creation date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -20551,28 +20624,28 @@
           },
           "takenAfter": {
             "description": "Filter by taken date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "takenBefore": {
             "description": "Filter by taken date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "trashedAfter": {
             "description": "Filter by trash date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "trashedBefore": {
             "description": "Filter by trash date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -20582,14 +20655,14 @@
           },
           "updatedAfter": {
             "description": "Filter by update date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "updatedBefore": {
             "description": "Filter by update date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -20690,7 +20763,8 @@
             "description": "Number of albums in this page",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "facets": {
             "items": {
@@ -20708,7 +20782,8 @@
             "description": "Total number of matching albums",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -20725,7 +20800,8 @@
             "description": "Number of assets in this page",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "facets": {
             "items": {
@@ -20748,7 +20824,8 @@
             "description": "Total number of matching assets",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -20801,7 +20878,8 @@
             "description": "Number of assets with this facet value",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "value": {
             "description": "Facet value",
@@ -20854,7 +20932,8 @@
             "description": "Total number of matching assets",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -21037,13 +21116,15 @@
             "description": "Number of days before trashed assets are permanently deleted",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "userDeleteDelay": {
             "description": "Delay in days before deleted users are permanently removed",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -21192,13 +21273,15 @@
             "description": "Total number of photos",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "usage": {
             "description": "Total storage usage in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "usageByUser": {
             "description": "Array of usage for each user",
@@ -21211,19 +21294,22 @@
             "description": "Storage usage for photos in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "usageVideos": {
             "description": "Storage usage for videos in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "videos": {
             "description": "Total number of videos",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -21246,7 +21332,8 @@
             "description": "Available disk space in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "diskSize": {
             "description": "Total disk size (human-readable format)",
@@ -21256,7 +21343,8 @@
             "description": "Total disk size in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "diskUsagePercentage": {
             "description": "Disk usage percentage (0-100)",
@@ -21271,7 +21359,8 @@
             "description": "Used disk space in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -21289,7 +21378,7 @@
         "properties": {
           "createdAt": {
             "description": "When this version was first seen",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -21316,19 +21405,22 @@
             "description": "Major version number",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "minor": {
             "description": "Minor version number",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "patch": {
             "description": "Patch version number",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -21352,7 +21444,8 @@
             "description": "Session duration in seconds",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "type": "object"
@@ -21540,7 +21633,7 @@
           "expiresAt": {
             "default": null,
             "description": "Expiration date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -21591,7 +21684,7 @@
           },
           "expiresAt": {
             "description": "Expiration date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -21649,7 +21742,7 @@
           },
           "createdAt": {
             "description": "Creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -21661,7 +21754,7 @@
           },
           "expiresAt": {
             "description": "Expiration date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -21802,14 +21895,14 @@
           },
           "createdAfter": {
             "description": "Filter by creation date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "createdBefore": {
             "description": "Filter by creation date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -21868,7 +21961,8 @@
             "description": "Page number",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "personIds": {
             "description": "Filter by person IDs",
@@ -21935,28 +22029,28 @@
           },
           "takenAfter": {
             "description": "Filter by taken date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "takenBefore": {
             "description": "Filter by taken date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "trashedAfter": {
             "description": "Filter by trash date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "trashedBefore": {
             "description": "Filter by trash date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -21966,14 +22060,14 @@
           },
           "updatedAfter": {
             "description": "Filter by update date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "updatedBefore": {
             "description": "Filter by update date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22078,14 +22172,14 @@
           },
           "createdAfter": {
             "description": "Filter by creation date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "createdBefore": {
             "description": "Filter by creation date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22189,28 +22283,28 @@
           },
           "takenAfter": {
             "description": "Filter by taken date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "takenBefore": {
             "description": "Filter by taken date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "trashedAfter": {
             "description": "Filter by trash date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "trashedBefore": {
             "description": "Filter by trash date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22220,14 +22314,14 @@
           },
           "updatedAfter": {
             "description": "Filter by update date (after)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "updatedBefore": {
             "description": "Filter by update date (before)",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22386,7 +22480,7 @@
         "properties": {
           "createdAt": {
             "description": "Created at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22421,7 +22515,7 @@
           },
           "updatedAt": {
             "description": "Updated at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22444,7 +22538,7 @@
         "properties": {
           "createdAt": {
             "description": "Created at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22475,7 +22569,7 @@
           },
           "updatedAt": {
             "description": "Updated at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -22539,7 +22633,8 @@
             "description": "Edit sequence",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -22569,7 +22664,7 @@
           },
           "dateTimeOriginal": {
             "description": "Date time original",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -22585,14 +22680,16 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "exifImageWidth": {
             "description": "Exif image width",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "exposureTime": {
             "description": "Exposure time",
@@ -22610,7 +22707,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "focalLength": {
             "description": "Focal length",
@@ -22629,7 +22727,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "latitude": {
             "description": "Latitude",
@@ -22660,7 +22759,7 @@
           },
           "modifyDate": {
             "description": "Modify date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -22686,7 +22785,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "state": {
             "description": "State",
@@ -22750,25 +22850,29 @@
             "description": "Bounding box X1",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxX2": {
             "description": "Bounding box X2",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxY1": {
             "description": "Bounding box Y1",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxY2": {
             "description": "Bounding box Y2",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "description": "Asset face ID",
@@ -22778,13 +22882,15 @@
             "description": "Image height",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "imageWidth": {
             "description": "Image width",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "personId": {
             "description": "Person ID",
@@ -22820,29 +22926,33 @@
             "description": "Bounding box X1",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxX2": {
             "description": "Bounding box X2",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxY1": {
             "description": "Bounding box Y1",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "boundingBoxY2": {
             "description": "Bounding box Y2",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "deletedAt": {
             "description": "Face deleted at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -22856,13 +22966,15 @@
             "description": "Image height",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "imageWidth": {
             "description": "Image width",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isVisible": {
             "description": "Is the face visible in the asset",
@@ -22942,7 +23054,7 @@
           },
           "createdAt": {
             "description": "Uploaded to Immich at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -22950,7 +23062,7 @@
           },
           "deletedAt": {
             "description": "Deleted at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -22963,7 +23075,7 @@
           },
           "fileCreatedAt": {
             "description": "File created at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -22971,7 +23083,7 @@
           },
           "fileModifiedAt": {
             "description": "File modified at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -22982,7 +23094,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "description": "Asset ID",
@@ -23008,7 +23121,7 @@
           },
           "localDateTime": {
             "description": "Local date time",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23043,7 +23156,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -23078,7 +23192,7 @@
           },
           "createdAt": {
             "description": "Uploaded to Immich at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23086,7 +23200,7 @@
           },
           "deletedAt": {
             "description": "Deleted at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23101,7 +23215,7 @@
           },
           "fileCreatedAt": {
             "description": "File created at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23109,7 +23223,7 @@
           },
           "fileModifiedAt": {
             "description": "File modified at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23120,7 +23234,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "description": "Asset ID",
@@ -23146,7 +23261,7 @@
           },
           "localDateTime": {
             "description": "Local date time",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23181,7 +23296,8 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -23220,7 +23336,7 @@
           },
           "deletedAt": {
             "description": "User deleted at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23257,7 +23373,7 @@
           },
           "profileChangedAt": {
             "description": "User profile changed at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23267,13 +23383,15 @@
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "quotaUsageInBytes": {
             "description": "Quota usage in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "storageLabel": {
             "description": "User storage label",
@@ -23414,7 +23532,7 @@
         "properties": {
           "createdAt": {
             "description": "Created at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23426,7 +23544,7 @@
           },
           "deletedAt": {
             "description": "Deleted at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23434,7 +23552,7 @@
           },
           "hideAt": {
             "description": "Hide at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23450,7 +23568,7 @@
           },
           "memoryAt": {
             "description": "Memory at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23461,7 +23579,7 @@
           },
           "seenAt": {
             "description": "Seen at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23469,7 +23587,7 @@
           },
           "showAt": {
             "description": "Show at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23480,7 +23598,7 @@
           },
           "updatedAt": {
             "description": "Updated at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23557,7 +23675,7 @@
         "properties": {
           "birthDate": {
             "description": "Birth date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23570,7 +23688,7 @@
           },
           "createdAt": {
             "description": "Created at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23602,7 +23720,7 @@
           },
           "updatedAt": {
             "description": "Updated at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23674,7 +23792,7 @@
         "properties": {
           "createdAt": {
             "description": "Created at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23693,7 +23811,7 @@
           },
           "updatedAt": {
             "description": "Updated at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23789,7 +23907,7 @@
           },
           "deletedAt": {
             "description": "User deleted at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -23813,7 +23931,7 @@
           },
           "profileChangedAt": {
             "description": "User profile changed at",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -23981,7 +24099,8 @@
             "description": "GOP size",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "maxBitrate": {
             "description": "Max bitrate",
@@ -24019,7 +24138,8 @@
             "description": "Threads",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "tonemap": {
             "$ref": "#/components/schemas/ToneMapping"
@@ -24115,7 +24235,8 @@
             "description": "Size",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -24445,7 +24566,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "enabled": {
             "description": "Enabled",
@@ -24499,7 +24621,8 @@
             "description": "Timeout",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "tokenEndpointAuthMethod": {
             "$ref": "#/components/schemas/OAuthTokenEndpointAuthMethod"
@@ -24785,7 +24908,8 @@
             "description": "Days",
             "maximum": 9007199254740991,
             "minimum": 0,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "enabled": {
             "description": "Enabled",
@@ -24804,7 +24928,8 @@
             "description": "Delete delay",
             "maximum": 9007199254740991,
             "minimum": 1,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -24845,7 +24970,8 @@
             "description": "Number of assets tagged",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -25196,7 +25322,8 @@
             "example": 42,
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "timeBucket": {
             "description": "Time bucket identifier in YYYY-MM-DD format representing the start of the time period",
@@ -25248,7 +25375,8 @@
             "description": "Number of items in trash",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -25387,32 +25515,37 @@
             "description": "Number of photos",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "quotaSizeInBytes": {
             "description": "User quota size in bytes (null if unlimited)",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "usage": {
             "description": "Total storage usage in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "usagePhotos": {
             "description": "Storage usage for photos in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "usageVideos": {
             "description": "Storage usage for videos in bytes",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "userId": {
             "description": "User ID",
@@ -25426,7 +25559,8 @@
             "description": "Number of videos",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         },
         "required": [
@@ -25485,7 +25619,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "shouldChangePassword": {
             "description": "Require password change on next login",
@@ -25520,14 +25655,14 @@
           },
           "createdAt": {
             "description": "Creation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
           },
           "deletedAt": {
             "description": "Deletion date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "nullable": true,
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
@@ -25579,14 +25714,16 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "quotaUsageInBytes": {
             "description": "Storage usage in bytes",
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "shouldChangePassword": {
             "description": "Require password change on next login",
@@ -25602,7 +25739,7 @@
           },
           "updatedAt": {
             "description": "Last update date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -25669,7 +25806,8 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "nullable": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "shouldChangePassword": {
             "description": "Require password change on next login",
@@ -25703,7 +25841,7 @@
         "properties": {
           "activatedAt": {
             "description": "Activation date",
-            "example": "2024-01-01T00:00:00.000Z",
+            "example": "2024-01-01T00:00:00Z",
             "format": "date-time",
             "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$",
             "type": "string"
@@ -26050,7 +26188,8 @@
             "description": "Action order",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "pluginActionId": {
             "description": "Plugin action ID",
@@ -26151,7 +26290,8 @@
             "description": "Filter order",
             "maximum": 9007199254740991,
             "minimum": -9007199254740991,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "pluginFilterId": {
             "description": "Plugin filter ID",

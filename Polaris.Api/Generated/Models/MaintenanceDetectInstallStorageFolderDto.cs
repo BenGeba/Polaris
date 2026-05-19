@@ -15,7 +15,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of files in the folder</summary>
-        public int? Files { get; set; }
+        public long? Files { get; set; }
         /// <summary>Storage folder</summary>
         public global::Polaris.Api.Client.Models.StorageFolder? Folder { get; set; }
         /// <summary>Whether the folder is readable</summary>
@@ -47,7 +47,7 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "files", n => { Files = n.GetIntValue(); } },
+                { "files", n => { Files = n.GetLongValue(); } },
                 { "folder", n => { Folder = n.GetEnumValue<global::Polaris.Api.Client.Models.StorageFolder>(); } },
                 { "readable", n => { Readable = n.GetBoolValue(); } },
                 { "writable", n => { Writable = n.GetBoolValue(); } },
@@ -60,7 +60,7 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("files", Files);
+            writer.WriteLongValue("files", Files);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.StorageFolder>("folder", Folder);
             writer.WriteBoolValue("readable", Readable);
             writer.WriteBoolValue("writable", Writable);

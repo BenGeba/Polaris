@@ -23,7 +23,7 @@ namespace Polaris.Api.Client.Models
         public string DiskAvailable { get; set; }
 #endif
         /// <summary>Available disk space in bytes</summary>
-        public int? DiskAvailableRaw { get; set; }
+        public long? DiskAvailableRaw { get; set; }
         /// <summary>Total disk size (human-readable format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Polaris.Api.Client.Models
         public string DiskSize { get; set; }
 #endif
         /// <summary>Total disk size in bytes</summary>
-        public int? DiskSizeRaw { get; set; }
+        public long? DiskSizeRaw { get; set; }
         /// <summary>Disk usage percentage (0-100)</summary>
         public double? DiskUsagePercentage { get; set; }
         /// <summary>Used disk space (human-readable format)</summary>
@@ -45,7 +45,7 @@ namespace Polaris.Api.Client.Models
         public string DiskUse { get; set; }
 #endif
         /// <summary>Used disk space in bytes</summary>
-        public int? DiskUseRaw { get; set; }
+        public long? DiskUseRaw { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.ServerStorageResponseDto"/> and sets the default values.
         /// </summary>
@@ -72,12 +72,12 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "diskAvailable", n => { DiskAvailable = n.GetStringValue(); } },
-                { "diskAvailableRaw", n => { DiskAvailableRaw = n.GetIntValue(); } },
+                { "diskAvailableRaw", n => { DiskAvailableRaw = n.GetLongValue(); } },
                 { "diskSize", n => { DiskSize = n.GetStringValue(); } },
-                { "diskSizeRaw", n => { DiskSizeRaw = n.GetIntValue(); } },
+                { "diskSizeRaw", n => { DiskSizeRaw = n.GetLongValue(); } },
                 { "diskUsagePercentage", n => { DiskUsagePercentage = n.GetDoubleValue(); } },
                 { "diskUse", n => { DiskUse = n.GetStringValue(); } },
-                { "diskUseRaw", n => { DiskUseRaw = n.GetIntValue(); } },
+                { "diskUseRaw", n => { DiskUseRaw = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -88,12 +88,12 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("diskAvailable", DiskAvailable);
-            writer.WriteIntValue("diskAvailableRaw", DiskAvailableRaw);
+            writer.WriteLongValue("diskAvailableRaw", DiskAvailableRaw);
             writer.WriteStringValue("diskSize", DiskSize);
-            writer.WriteIntValue("diskSizeRaw", DiskSizeRaw);
+            writer.WriteLongValue("diskSizeRaw", DiskSizeRaw);
             writer.WriteDoubleValue("diskUsagePercentage", DiskUsagePercentage);
             writer.WriteStringValue("diskUse", DiskUse);
-            writer.WriteIntValue("diskUseRaw", DiskUseRaw);
+            writer.WriteLongValue("diskUseRaw", DiskUseRaw);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

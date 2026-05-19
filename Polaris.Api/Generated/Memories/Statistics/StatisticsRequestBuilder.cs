@@ -98,7 +98,7 @@ namespace Polaris.Api.Client.Memories.Statistics
             public global::Polaris.Api.Client.Models.MemorySearchOrder? Order { get; set; }
             /// <summary>Number of memories to return</summary>
             [QueryParameter("size")]
-            public int? Size { get; set; }
+            public long? Size { get; set; }
             [QueryParameter("type")]
             public global::Polaris.Api.Client.Models.MemoryType? Type { get; set; }
         }

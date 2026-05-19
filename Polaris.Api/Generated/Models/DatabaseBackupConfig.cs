@@ -25,7 +25,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Enabled</summary>
         public bool? Enabled { get; set; }
         /// <summary>Keep last amount</summary>
-        public int? KeepLastAmount { get; set; }
+        public long? KeepLastAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.DatabaseBackupConfig"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Polaris.Api.Client.Models
             {
                 { "cronExpression", n => { CronExpression = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "keepLastAmount", n => { KeepLastAmount = n.GetIntValue(); } },
+                { "keepLastAmount", n => { KeepLastAmount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Polaris.Api.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cronExpression", CronExpression);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteIntValue("keepLastAmount", KeepLastAmount);
+            writer.WriteLongValue("keepLastAmount", KeepLastAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

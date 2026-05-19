@@ -231,7 +231,7 @@ namespace Polaris.Api.Client.People
             public Guid? ClosestPersonId { get; set; }
             /// <summary>Page number for pagination</summary>
             [QueryParameter("page")]
-            public int? Page { get; set; }
+            public long? Page { get; set; }
             /// <summary>Number of items per page</summary>
             [QueryParameter("size")]
             public int? Size { get; set; }

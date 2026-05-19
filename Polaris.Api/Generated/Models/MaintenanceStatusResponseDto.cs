@@ -27,7 +27,7 @@ namespace Polaris.Api.Client.Models
         public string Error { get; set; }
 #endif
         /// <summary>The progress property</summary>
-        public int? Progress { get; set; }
+        public long? Progress { get; set; }
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +64,7 @@ namespace Polaris.Api.Client.Models
                 { "action", n => { Action = n.GetEnumValue<global::Polaris.Api.Client.Models.MaintenanceAction>(); } },
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
-                { "progress", n => { Progress = n.GetIntValue(); } },
+                { "progress", n => { Progress = n.GetLongValue(); } },
                 { "task", n => { Task = n.GetStringValue(); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.MaintenanceAction>("action", Action);
             writer.WriteBoolValue("active", Active);
             writer.WriteStringValue("error", Error);
-            writer.WriteIntValue("progress", Progress);
+            writer.WriteLongValue("progress", Progress);
             writer.WriteStringValue("task", Task);
             writer.WriteAdditionalData(AdditionalData);
         }

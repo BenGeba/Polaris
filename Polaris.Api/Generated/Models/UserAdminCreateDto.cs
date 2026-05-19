@@ -53,7 +53,7 @@ namespace Polaris.Api.Client.Models
         public string PinCode { get; set; }
 #endif
         /// <summary>Storage quota in bytes</summary>
-        public int? QuotaSizeInBytes { get; set; }
+        public long? QuotaSizeInBytes { get; set; }
         /// <summary>Require password change on next login</summary>
         public bool? ShouldChangePassword { get; set; }
         /// <summary>Storage label</summary>
@@ -96,7 +96,7 @@ namespace Polaris.Api.Client.Models
                 { "notify", n => { Notify = n.GetBoolValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
                 { "pinCode", n => { PinCode = n.GetStringValue(); } },
-                { "quotaSizeInBytes", n => { QuotaSizeInBytes = n.GetIntValue(); } },
+                { "quotaSizeInBytes", n => { QuotaSizeInBytes = n.GetLongValue(); } },
                 { "shouldChangePassword", n => { ShouldChangePassword = n.GetBoolValue(); } },
                 { "storageLabel", n => { StorageLabel = n.GetStringValue(); } },
             };
@@ -115,7 +115,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteBoolValue("notify", Notify);
             writer.WriteStringValue("password", Password);
             writer.WriteStringValue("pinCode", PinCode);
-            writer.WriteIntValue("quotaSizeInBytes", QuotaSizeInBytes);
+            writer.WriteLongValue("quotaSizeInBytes", QuotaSizeInBytes);
             writer.WriteBoolValue("shouldChangePassword", ShouldChangePassword);
             writer.WriteStringValue("storageLabel", StorageLabel);
             writer.WriteAdditionalData(AdditionalData);

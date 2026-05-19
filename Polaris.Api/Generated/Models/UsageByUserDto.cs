@@ -15,15 +15,15 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of photos</summary>
-        public int? Photos { get; set; }
+        public long? Photos { get; set; }
         /// <summary>User quota size in bytes (null if unlimited)</summary>
-        public int? QuotaSizeInBytes { get; set; }
+        public long? QuotaSizeInBytes { get; set; }
         /// <summary>Total storage usage in bytes</summary>
-        public int? Usage { get; set; }
+        public long? Usage { get; set; }
         /// <summary>Storage usage for photos in bytes</summary>
-        public int? UsagePhotos { get; set; }
+        public long? UsagePhotos { get; set; }
         /// <summary>Storage usage for videos in bytes</summary>
-        public int? UsageVideos { get; set; }
+        public long? UsageVideos { get; set; }
         /// <summary>User ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Polaris.Api.Client.Models
         public string UserName { get; set; }
 #endif
         /// <summary>Number of videos</summary>
-        public int? Videos { get; set; }
+        public long? Videos { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.UsageByUserDto"/> and sets the default values.
         /// </summary>
@@ -67,14 +67,14 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "photos", n => { Photos = n.GetIntValue(); } },
-                { "quotaSizeInBytes", n => { QuotaSizeInBytes = n.GetIntValue(); } },
-                { "usage", n => { Usage = n.GetIntValue(); } },
-                { "usagePhotos", n => { UsagePhotos = n.GetIntValue(); } },
-                { "usageVideos", n => { UsageVideos = n.GetIntValue(); } },
+                { "photos", n => { Photos = n.GetLongValue(); } },
+                { "quotaSizeInBytes", n => { QuotaSizeInBytes = n.GetLongValue(); } },
+                { "usage", n => { Usage = n.GetLongValue(); } },
+                { "usagePhotos", n => { UsagePhotos = n.GetLongValue(); } },
+                { "usageVideos", n => { UsageVideos = n.GetLongValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
-                { "videos", n => { Videos = n.GetIntValue(); } },
+                { "videos", n => { Videos = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -84,14 +84,14 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("photos", Photos);
-            writer.WriteIntValue("quotaSizeInBytes", QuotaSizeInBytes);
-            writer.WriteIntValue("usage", Usage);
-            writer.WriteIntValue("usagePhotos", UsagePhotos);
-            writer.WriteIntValue("usageVideos", UsageVideos);
+            writer.WriteLongValue("photos", Photos);
+            writer.WriteLongValue("quotaSizeInBytes", QuotaSizeInBytes);
+            writer.WriteLongValue("usage", Usage);
+            writer.WriteLongValue("usagePhotos", UsagePhotos);
+            writer.WriteLongValue("usageVideos", UsageVideos);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userName", UserName);
-            writer.WriteIntValue("videos", Videos);
+            writer.WriteLongValue("videos", Videos);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

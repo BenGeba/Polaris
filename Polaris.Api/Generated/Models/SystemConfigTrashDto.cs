@@ -15,7 +15,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Days</summary>
-        public int? Days { get; set; }
+        public long? Days { get; set; }
         /// <summary>Enabled</summary>
         public bool? Enabled { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "days", n => { Days = n.GetIntValue(); } },
+                { "days", n => { Days = n.GetLongValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("days", Days);
+            writer.WriteLongValue("days", Days);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteAdditionalData(AdditionalData);
         }

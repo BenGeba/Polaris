@@ -95,7 +95,7 @@ namespace Polaris.Api.Client.Models
         public string Ocr { get; set; }
 #endif
         /// <summary>Page number</summary>
-        public int? Page { get; set; }
+        public long? Page { get; set; }
         /// <summary>Filter by person IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,7 +195,7 @@ namespace Polaris.Api.Client.Models
                 { "make", n => { Make = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "ocr", n => { Ocr = n.GetStringValue(); } },
-                { "page", n => { Page = n.GetIntValue(); } },
+                { "page", n => { Page = n.GetLongValue(); } },
                 { "personIds", n => { PersonIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryAssetId", n => { QueryAssetId = n.GetGuidValue(); } },
@@ -238,7 +238,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteStringValue("make", Make);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("ocr", Ocr);
-            writer.WriteIntValue("page", Page);
+            writer.WriteLongValue("page", Page);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("personIds", PersonIds);
             writer.WriteStringValue("query", Query);
             writer.WriteGuidValue("queryAssetId", QueryAssetId);

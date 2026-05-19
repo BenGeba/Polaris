@@ -31,7 +31,7 @@ namespace Polaris.Api.Client.Models
         public string Id { get; set; }
 #endif
         /// <summary>Action order</summary>
-        public int? Order { get; set; }
+        public long? Order { get; set; }
         /// <summary>Plugin action ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Polaris.Api.Client.Models
             {
                 { "actionConfig", n => { ActionConfig = n.GetObjectValue<global::Polaris.Api.Client.Models.WorkflowActionConfig>(global::Polaris.Api.Client.Models.WorkflowActionConfig.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "order", n => { Order = n.GetIntValue(); } },
+                { "order", n => { Order = n.GetLongValue(); } },
                 { "pluginActionId", n => { PluginActionId = n.GetStringValue(); } },
                 { "workflowId", n => { WorkflowId = n.GetStringValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Polaris.Api.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Polaris.Api.Client.Models.WorkflowActionConfig>("actionConfig", ActionConfig);
             writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("order", Order);
+            writer.WriteLongValue("order", Order);
             writer.WriteStringValue("pluginActionId", PluginActionId);
             writer.WriteStringValue("workflowId", WorkflowId);
             writer.WriteAdditionalData(AdditionalData);

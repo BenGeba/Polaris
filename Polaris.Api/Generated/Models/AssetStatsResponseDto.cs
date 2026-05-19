@@ -15,11 +15,11 @@ namespace Polaris.Api.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of images</summary>
-        public int? Images { get; set; }
+        public long? Images { get; set; }
         /// <summary>Total number of assets</summary>
-        public int? Total { get; set; }
+        public long? Total { get; set; }
         /// <summary>Number of videos</summary>
-        public int? Videos { get; set; }
+        public long? Videos { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.AssetStatsResponseDto"/> and sets the default values.
         /// </summary>
@@ -45,9 +45,9 @@ namespace Polaris.Api.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "images", n => { Images = n.GetIntValue(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
-                { "videos", n => { Videos = n.GetIntValue(); } },
+                { "images", n => { Images = n.GetLongValue(); } },
+                { "total", n => { Total = n.GetLongValue(); } },
+                { "videos", n => { Videos = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Polaris.Api.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("images", Images);
-            writer.WriteIntValue("total", Total);
-            writer.WriteIntValue("videos", Videos);
+            writer.WriteLongValue("images", Images);
+            writer.WriteLongValue("total", Total);
+            writer.WriteLongValue("videos", Videos);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

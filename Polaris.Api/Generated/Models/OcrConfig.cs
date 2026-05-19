@@ -17,7 +17,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Whether the task is enabled</summary>
         public bool? Enabled { get; set; }
         /// <summary>Maximum resolution for OCR processing</summary>
-        public int? MaxResolution { get; set; }
+        public long? MaxResolution { get; set; }
         /// <summary>Minimum confidence score for text detection</summary>
         public double? MinDetectionScore { get; set; }
         /// <summary>Minimum confidence score for text recognition</summary>
@@ -56,7 +56,7 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "maxResolution", n => { MaxResolution = n.GetIntValue(); } },
+                { "maxResolution", n => { MaxResolution = n.GetLongValue(); } },
                 { "minDetectionScore", n => { MinDetectionScore = n.GetDoubleValue(); } },
                 { "minRecognitionScore", n => { MinRecognitionScore = n.GetDoubleValue(); } },
                 { "modelName", n => { ModelName = n.GetStringValue(); } },
@@ -70,7 +70,7 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteIntValue("maxResolution", MaxResolution);
+            writer.WriteLongValue("maxResolution", MaxResolution);
             writer.WriteDoubleValue("minDetectionScore", MinDetectionScore);
             writer.WriteDoubleValue("minRecognitionScore", MinRecognitionScore);
             writer.WriteStringValue("modelName", ModelName);

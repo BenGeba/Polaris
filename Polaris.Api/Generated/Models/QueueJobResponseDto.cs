@@ -33,7 +33,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Job name</summary>
         public global::Polaris.Api.Client.Models.JobName? Name { get; set; }
         /// <summary>Job creation timestamp</summary>
-        public int? Timestamp { get; set; }
+        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.QueueJobResponseDto"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Polaris.Api.Client.Models
                 { "data", n => { Data = n.GetObjectValue<global::Polaris.Api.Client.Models.QueueJobResponseDto_data>(global::Polaris.Api.Client.Models.QueueJobResponseDto_data.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetEnumValue<global::Polaris.Api.Client.Models.JobName>(); } },
-                { "timestamp", n => { Timestamp = n.GetIntValue(); } },
+                { "timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteObjectValue<global::Polaris.Api.Client.Models.QueueJobResponseDto_data>("data", Data);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.JobName>("name", Name);
-            writer.WriteIntValue("timestamp", Timestamp);
+            writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

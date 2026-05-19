@@ -17,9 +17,9 @@ namespace Polaris.Api.Client.Models
         /// <summary>Enabled</summary>
         public bool? Enabled { get; set; }
         /// <summary>The interval property</summary>
-        public int? Interval { get; set; }
+        public long? Interval { get; set; }
         /// <summary>The timeout property</summary>
-        public int? Timeout { get; set; }
+        public long? Timeout { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.MachineLearningAvailabilityChecksDto"/> and sets the default values.
         /// </summary>
@@ -46,8 +46,8 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "interval", n => { Interval = n.GetIntValue(); } },
-                { "timeout", n => { Timeout = n.GetIntValue(); } },
+                { "interval", n => { Interval = n.GetLongValue(); } },
+                { "timeout", n => { Timeout = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteIntValue("interval", Interval);
-            writer.WriteIntValue("timeout", Timeout);
+            writer.WriteLongValue("interval", Interval);
+            writer.WriteLongValue("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,7 +18,7 @@ namespace Polaris.Api.Client.Models
         /// <summary>Whether there are more pages</summary>
         public bool? HasNextPage { get; set; }
         /// <summary>Number of hidden people</summary>
-        public int? Hidden { get; set; }
+        public long? Hidden { get; set; }
         /// <summary>The people property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,7 +28,7 @@ namespace Polaris.Api.Client.Models
         public List<global::Polaris.Api.Client.Models.PersonResponseDto> People { get; set; }
 #endif
         /// <summary>Total number of people</summary>
-        public int? Total { get; set; }
+        public long? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Polaris.Api.Client.Models.PeopleResponseDto"/> and sets the default values.
         /// </summary>
@@ -55,9 +55,9 @@ namespace Polaris.Api.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "hasNextPage", n => { HasNextPage = n.GetBoolValue(); } },
-                { "hidden", n => { Hidden = n.GetIntValue(); } },
+                { "hidden", n => { Hidden = n.GetLongValue(); } },
                 { "people", n => { People = n.GetCollectionOfObjectValues<global::Polaris.Api.Client.Models.PersonResponseDto>(global::Polaris.Api.Client.Models.PersonResponseDto.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
+                { "total", n => { Total = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -68,9 +68,9 @@ namespace Polaris.Api.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hasNextPage", HasNextPage);
-            writer.WriteIntValue("hidden", Hidden);
+            writer.WriteLongValue("hidden", Hidden);
             writer.WriteCollectionOfObjectValues<global::Polaris.Api.Client.Models.PersonResponseDto>("people", People);
-            writer.WriteIntValue("total", Total);
+            writer.WriteLongValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

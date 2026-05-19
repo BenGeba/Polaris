@@ -131,7 +131,7 @@ namespace Polaris.Api.Client.Models
         public string OriginalPath { get; set; }
 #endif
         /// <summary>Page number</summary>
-        public int? Page { get; set; }
+        public long? Page { get; set; }
         /// <summary>Filter by person IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -247,7 +247,7 @@ namespace Polaris.Api.Client.Models
                 { "order", n => { Order = n.GetEnumValue<global::Polaris.Api.Client.Models.AssetOrder>(); } },
                 { "originalFileName", n => { OriginalFileName = n.GetStringValue(); } },
                 { "originalPath", n => { OriginalPath = n.GetStringValue(); } },
-                { "page", n => { Page = n.GetIntValue(); } },
+                { "page", n => { Page = n.GetLongValue(); } },
                 { "personIds", n => { PersonIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "previewPath", n => { PreviewPath = n.GetStringValue(); } },
                 { "rating", n => { Rating = n.GetIntValue(); } },
@@ -298,7 +298,7 @@ namespace Polaris.Api.Client.Models
             writer.WriteEnumValue<global::Polaris.Api.Client.Models.AssetOrder>("order", Order);
             writer.WriteStringValue("originalFileName", OriginalFileName);
             writer.WriteStringValue("originalPath", OriginalPath);
-            writer.WriteIntValue("page", Page);
+            writer.WriteLongValue("page", Page);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("personIds", PersonIds);
             writer.WriteStringValue("previewPath", PreviewPath);
             writer.WriteIntValue("rating", Rating);
