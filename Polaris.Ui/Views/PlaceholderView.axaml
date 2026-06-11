@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Polaris.Ui.ViewModels"
+             xmlns:controls="using:Polaris.Ui.Controls"
+             mc:Ignorable="d" d:DesignWidth="1060" d:DesignHeight="800"
+             x:DataType="vm:PlaceholderViewModel"
+             x:Class="Polaris.Ui.Views.PlaceholderView"
+             Background="{StaticResource BgBaseBrush}">
+
+    <DockPanel>
+        <controls:TopBar DockPanel.Dock="Top" Title="{Binding Title}" />
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Spacing="14">
+            <Border Width="64" Height="64"
+                    CornerRadius="18"
+                    Background="{StaticResource BgCardBrush}"
+                    BoxShadow="inset 0 1 0 0 #14FFFFFF"
+                    HorizontalAlignment="Center">
+                <PathIcon Width="28" Height="28"
+                          Foreground="{StaticResource FgLabelBrush}"
+                          Data="{Binding Icon, Converter={StaticResource IconKindToGeometry}}" />
+            </Border>
+            <TextBlock Text="{Binding Title}"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       Foreground="{StaticResource FgBodyBrush}"
+                       HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding Message}"
+                       FontSize="13"
+                       Foreground="{StaticResource FgMutedBrush}"
+                       MaxWidth="320"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       HorizontalAlignment="Center" />
+        </StackPanel>
+    </DockPanel>
+</UserControl>

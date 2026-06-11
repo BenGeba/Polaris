@@ -1,0 +1,361 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Polaris.Ui.Controls">
+
+    <!-- =====================================================================
+         Polaris Design System tokens
+         Source: design handoff bundle (colors_and_type.css), seeded from
+         LoginView.axaml. Single source of truth for colors, brushes, themes.
+         ===================================================================== -->
+    <Styles.Resources>
+        <ResourceDictionary>
+            <!-- Backgrounds -->
+            <Color x:Key="BgBase">#0D0D0F</Color>
+            <Color x:Key="BgSidebar">#0B0B0F</Color>
+            <Color x:Key="BgCard">#13131A</Color>
+            <Color x:Key="BgInput">#1C1C27</Color>
+            <Color x:Key="BgHover">#1F1F2C</Color>
+            <Color x:Key="BgNavHover">#101017</Color>
+            <Color x:Key="BgPressed">#16161E</Color>
+            <Color x:Key="BgSegmentActive">#252535</Color>
+
+            <!-- Borders & dividers -->
+            <Color x:Key="BorderSubtle">#252535</Color>
+            <Color x:Key="BorderStrong">#3A3A52</Color>
+            <Color x:Key="Divider">#1A1A22</Color>
+
+            <!-- Foreground -->
+            <Color x:Key="FgStrong">#FFFFFF</Color>
+            <Color x:Key="FgBody">#D1D5DB</Color>
+            <Color x:Key="FgNav">#9CA3AF</Color>
+            <Color x:Key="FgMuted">#6B7280</Color>
+            <Color x:Key="FgLabel">#4B5563</Color>
+            <Color x:Key="FgHint">#374151</Color>
+
+            <!-- Brand -->
+            <Color x:Key="BrandFrom">#2563EB</Color>
+            <Color x:Key="BrandTo">#0EA5E9</Color>
+            <Color x:Key="BrandLoading">#A0C4FF</Color>
+            <Color x:Key="Accent">#0EA5E9</Color>
+            <Color x:Key="GroupHeader">#7C6CE0</Color>
+
+            <!-- Semantic -->
+            <Color x:Key="DangerBg">#2D1515</Color>
+            <Color x:Key="DangerBorder">#4A1F1F</Color>
+            <Color x:Key="DangerFg">#F87171</Color>
+            <Color x:Key="SuccessBg">#0F2D1F</Color>
+            <Color x:Key="SuccessFg">#34D399</Color>
+
+            <!-- Brushes -->
+            <SolidColorBrush x:Key="BgBaseBrush" Color="{StaticResource BgBase}" />
+            <SolidColorBrush x:Key="SidebarBackground" Color="{StaticResource BgSidebar}" />
+            <SolidColorBrush x:Key="BgCardBrush" Color="{StaticResource BgCard}" />
+            <SolidColorBrush x:Key="BgInputBrush" Color="{StaticResource BgInput}" />
+            <SolidColorBrush x:Key="BgHoverBrush" Color="{StaticResource BgHover}" />
+            <SolidColorBrush x:Key="BgNavHoverBrush" Color="{StaticResource BgNavHover}" />
+            <SolidColorBrush x:Key="BgSegmentActiveBrush" Color="{StaticResource BgSegmentActive}" />
+            <SolidColorBrush x:Key="BorderSubtleBrush" Color="{StaticResource BorderSubtle}" />
+            <SolidColorBrush x:Key="BorderStrongBrush" Color="{StaticResource BorderStrong}" />
+            <SolidColorBrush x:Key="DividerBrush" Color="{StaticResource Divider}" />
+            <SolidColorBrush x:Key="FgStrongBrush" Color="{StaticResource FgStrong}" />
+            <SolidColorBrush x:Key="FgBodyBrush" Color="{StaticResource FgBody}" />
+            <SolidColorBrush x:Key="FgNavBrush" Color="{StaticResource FgNav}" />
+            <SolidColorBrush x:Key="FgMutedBrush" Color="{StaticResource FgMuted}" />
+            <SolidColorBrush x:Key="FgLabelBrush" Color="{StaticResource FgLabel}" />
+            <SolidColorBrush x:Key="FgHintBrush" Color="{StaticResource FgHint}" />
+            <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource Accent}" />
+            <SolidColorBrush x:Key="GroupHeaderBrush" Color="{StaticResource GroupHeader}" />
+            <SolidColorBrush x:Key="DangerBgBrush" Color="{StaticResource DangerBg}" />
+            <SolidColorBrush x:Key="DangerBorderBrush" Color="{StaticResource DangerBorder}" />
+            <SolidColorBrush x:Key="DangerFgBrush" Color="{StaticResource DangerFg}" />
+            <SolidColorBrush x:Key="SuccessBgBrush" Color="{StaticResource SuccessBg}" />
+            <SolidColorBrush x:Key="SuccessFgBrush" Color="{StaticResource SuccessFg}" />
+
+            <LinearGradientBrush x:Key="BrandGradient" StartPoint="0%,0%" EndPoint="100%,100%">
+                <GradientStop Color="{StaticResource BrandFrom}" Offset="0" />
+                <GradientStop Color="{StaticResource BrandTo}" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="BrandGradientH" StartPoint="0%,0%" EndPoint="100%,0%">
+                <GradientStop Color="{StaticResource BrandFrom}" Offset="0" />
+                <GradientStop Color="{StaticResource BrandTo}" Offset="1" />
+            </LinearGradientBrush>
+
+            <!-- =============================================================
+                 TopBar: title + subtitle left, actions (Content) right
+                 ============================================================= -->
+            <ControlTheme x:Key="{x:Type controls:TopBar}" TargetType="controls:TopBar">
+                <Setter Property="Template">
+                    <ControlTemplate>
+                        <Border Background="{StaticResource BgBaseBrush}"
+                                BorderBrush="{StaticResource DividerBrush}"
+                                BorderThickness="0,0,0,1"
+                                Padding="28,18,28,16">
+                            <DockPanel>
+                                <ContentPresenter DockPanel.Dock="Right"
+                                                  Content="{TemplateBinding Content}"
+                                                  VerticalAlignment="Center" />
+                                <StackPanel VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Text="{TemplateBinding Title}"
+                                               FontSize="22"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource FgStrongBrush}" />
+                                    <TextBlock Text="{TemplateBinding Subtitle}"
+                                               FontSize="12"
+                                               Foreground="{StaticResource FgMutedBrush}"
+                                               IsVisible="{TemplateBinding Subtitle, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+                                </StackPanel>
+                            </DockPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter>
+            </ControlTheme>
+
+            <!-- =============================================================
+                 Chromeless button base: content only, states styled below
+                 ============================================================= -->
+            <ControlTheme x:Key="PolarisFlatButton" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="Template">
+                    <ControlTemplate>
+                        <ContentPresenter Name="PART_ContentPresenter"
+                                          Background="{TemplateBinding Background}"
+                                          CornerRadius="{TemplateBinding CornerRadius}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Padding="{TemplateBinding Padding}"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="Center" />
+                    </ControlTemplate>
+                </Setter>
+            </ControlTheme>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <!-- =====================================================================
+         Sidebar navigation rows (Button Classes="nav", optional "pill")
+         ===================================================================== -->
+    <Style Selector="Button.nav">
+        <Setter Property="Theme" Value="{StaticResource PolarisFlatButton}" />
+        <Setter Property="Padding" Value="12,9" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Margin" Value="0,1" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="Button.nav.pill">
+        <Setter Property="CornerRadius" Value="999" />
+    </Style>
+    <Style Selector="Button.nav:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource BgNavHoverBrush}" />
+    </Style>
+    <Style Selector="Button.nav.active /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource BgCardBrush}" />
+    </Style>
+    <Style Selector="Button.nav TextBlock">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="Foreground" Value="{StaticResource FgNavBrush}" />
+    </Style>
+    <Style Selector="Button.nav:pointerover TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource FgBodyBrush}" />
+    </Style>
+    <Style Selector="Button.nav.active TextBlock">
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{StaticResource FgStrongBrush}" />
+    </Style>
+    <Style Selector="Button.nav PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource FgNavBrush}" />
+    </Style>
+    <Style Selector="Button.nav:pointerover PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource FgBodyBrush}" />
+    </Style>
+    <Style Selector="Button.nav.active PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+    </Style>
+
+    <!-- Sub-album rows (indented, 22px cover tile) -->
+    <Style Selector="Button.subAlbum">
+        <Setter Property="Theme" Value="{StaticResource PolarisFlatButton}" />
+        <Setter Property="Padding" Value="28,6,12,6" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Margin" Value="0,1" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="Button.subAlbum:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource BgNavHoverBrush}" />
+    </Style>
+    <Style Selector="Button.subAlbum TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="Foreground" Value="{StaticResource FgNavBrush}" />
+    </Style>
+    <Style Selector="Button.subAlbum:pointerover TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource FgBodyBrush}" />
+    </Style>
+    <Style Selector="Button.subAlbum.active TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+    </Style>
+
+    <!-- =====================================================================
+         34×34 icon button (top bars, selection bar, lightbox)
+         ===================================================================== -->
+    <Style Selector="Button.icon">
+        <Setter Property="Theme" Value="{StaticResource PolarisFlatButton}" />
+        <Setter Property="Width" Value="34" />
+        <Setter Property="Height" Value="34" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.icon PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource FgMutedBrush}" />
+        <Setter Property="Width" Value="17" />
+        <Setter Property="Height" Value="17" />
+    </Style>
+    <Style Selector="Button.icon:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource BgCardBrush}" />
+    </Style>
+    <Style Selector="Button.icon:pointerover PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource FgBodyBrush}" />
+    </Style>
+    <Style Selector="Button.icon.active /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource BgHoverBrush}" />
+    </Style>
+    <Style Selector="Button.icon.active PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource FgStrongBrush}" />
+    </Style>
+
+    <!-- Small icon button variant (user chip: settings / logout) -->
+    <Style Selector="Button.iconSm">
+        <Setter Property="Theme" Value="{StaticResource PolarisFlatButton}" />
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.iconSm PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource FgMutedBrush}" />
+        <Setter Property="Width" Value="14" />
+        <Setter Property="Height" Value="14" />
+    </Style>
+    <Style Selector="Button.iconSm:pointerover PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource FgBodyBrush}" />
+    </Style>
+
+    <!-- =====================================================================
+         Segmented control (S/M/L, Theme, ThumbnailSize)
+         ===================================================================== -->
+    <Style Selector="Border.segmented">
+        <Setter Property="Background" Value="{StaticResource BgInputBrush}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="3" />
+    </Style>
+    <Style Selector="Button.segment">
+        <Setter Property="Theme" Value="{StaticResource PolarisFlatButton}" />
+        <Setter Property="Padding" Value="14,6" />
+        <Setter Property="CornerRadius" Value="6" />
+    </Style>
+    <Style Selector="Button.segment TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{StaticResource FgMutedBrush}" />
+    </Style>
+    <Style Selector="Button.segment.active /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource BgSegmentActiveBrush}" />
+    </Style>
+    <Style Selector="Button.segment.active TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource FgStrongBrush}" />
+    </Style>
+
+    <!-- Stepper buttons (settings: MaxParallelUploads) -->
+    <Style Selector="Button.stepper">
+        <Setter Property="Theme" Value="{StaticResource PolarisFlatButton}" />
+        <Setter Property="Width" Value="28" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.stepper TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{StaticResource FgMutedBrush}" />
+    </Style>
+    <Style Selector="Button.stepper:pointerover TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource FgStrongBrush}" />
+    </Style>
+
+    <!-- =====================================================================
+         Search input (top bars)
+         ===================================================================== -->
+    <Style Selector="Border.search">
+        <Setter Property="Background" Value="{StaticResource BgCardBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource DividerBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="10,0" />
+        <Setter Property="Height" Value="36" />
+    </Style>
+    <Style Selector="Border.search TextBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{StaticResource FgBodyBrush}" />
+        <Setter Property="CaretBrush" Value="White" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="MinHeight" Value="0" />
+    </Style>
+    <Style Selector="Border.search TextBox:pointerover /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Border.search TextBox:focus /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <!-- =====================================================================
+         Timeline thumbnails + date scrubber
+         ===================================================================== -->
+    <Style Selector="Border.thumb">
+        <Setter Property="BoxShadow" Value="inset 0 0 0 1 #0AFFFFFF" />
+    </Style>
+    <Style Selector="Border.thumb.selected">
+        <Setter Property="BoxShadow" Value="inset 0 0 0 3 #FF0EA5E9" />
+    </Style>
+
+    <Style Selector="Button.scrub">
+        <Setter Property="Theme" Value="{StaticResource PolarisFlatButton}" />
+        <Setter Property="Padding" Value="8,6" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="MinWidth" Value="38" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.scrub TextBlock.scrubMonth">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{StaticResource FgLabelBrush}" />
+    </Style>
+    <Style Selector="Button.scrub TextBlock.scrubYear">
+        <Setter Property="FontSize" Value="9" />
+        <Setter Property="Foreground" Value="{StaticResource FgHintBrush}" />
+    </Style>
+    <Style Selector="Button.scrub.active /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="#1F0EA5E9" />
+    </Style>
+    <Style Selector="Button.scrub.active TextBlock.scrubMonth">
+        <Setter Property="Foreground" Value="{StaticResource FgStrongBrush}" />
+    </Style>
+    <Style Selector="Button.scrub.active TextBlock.scrubYear">
+        <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+    </Style>
+
+    <!-- Uppercase section label (settings, lightbox info panel) -->
+    <Style Selector="TextBlock.sectionLabel">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="LetterSpacing" Value="1.5" />
+        <Setter Property="Foreground" Value="{StaticResource FgLabelBrush}" />
+    </Style>
+</Styles>

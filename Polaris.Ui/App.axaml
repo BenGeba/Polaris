@@ -2,14 +2,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Polaris.Ui.App"
              xmlns:local="using:Polaris.Ui"
+             xmlns:converters="using:Polaris.Ui.Converters"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>
-  
+
+    <Application.Resources>
+        <converters:PackIconMaterialKindToGeometryConverter x:Key="IconKindToGeometry" />
+        <converters:StringEqualsConverter x:Key="StringEquals" />
+    </Application.Resources>
+
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="avares://Polaris.Ui/Styles/Polaris.axaml" />
     </Application.Styles>
 </Application>

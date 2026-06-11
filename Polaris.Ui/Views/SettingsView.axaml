@@ -1,0 +1,195 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Polaris.Ui.ViewModels"
+             xmlns:models="using:Polaris.Ui.Models"
+             xmlns:controls="using:Polaris.Ui.Controls"
+             mc:Ignorable="d" d:DesignWidth="1060" d:DesignHeight="800"
+             x:DataType="vm:SettingsViewModel"
+             x:Class="Polaris.Ui.Views.SettingsView"
+             Background="{StaticResource BgBaseBrush}">
+
+    <DockPanel>
+        <controls:TopBar DockPanel.Dock="Top" Title="Einstellungen" Subtitle="Konfiguration und Verbindung" />
+
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+            <StackPanel MaxWidth="720" Margin="28">
+
+                <TextBlock Classes="sectionLabel" Text="VERBINDUNG" Margin="4,0,4,12" />
+                <Border Background="{StaticResource BgCardBrush}" CornerRadius="12" ClipToBounds="True">
+                    <StackPanel>
+                        <Grid ColumnDefinitions="*,16,Auto" Margin="18,14">
+                            <StackPanel>
+                                <TextBlock Text="Server URL" FontSize="14" FontWeight="Medium" Foreground="White" />
+                                <TextBlock Text="Aktive Immich Instanz" FontSize="12"
+                                           Foreground="{StaticResource FgMutedBrush}" Margin="0,2,0,0" />
+                            </StackPanel>
+                            <Border Grid.Column="2" Background="{StaticResource BgInputBrush}"
+                                    CornerRadius="6" Padding="10,6" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding ServerUrl}" FontSize="12"
+                                           FontFamily="Consolas,Menlo,monospace"
+                                           Foreground="{StaticResource FgBodyBrush}" />
+                            </Border>
+                        </Grid>
+                        <Border Height="1" Background="{StaticResource DividerBrush}" />
+                        <Grid ColumnDefinitions="*,16,Auto" Margin="18,14">
+                            <StackPanel>
+                                <TextBlock Text="API Key" FontSize="14" FontWeight="Medium" Foreground="White" />
+                                <TextBlock Text="Mit Profil → Account Settings → API Keys verwaltet" FontSize="12"
+                                           Foreground="{StaticResource FgMutedBrush}" Margin="0,2,0,0" />
+                            </StackPanel>
+                            <Border Grid.Column="2" Background="{StaticResource BgInputBrush}"
+                                    CornerRadius="6" Padding="10,6" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding ApiKeyMasked}" FontSize="12"
+                                           FontFamily="Consolas,Menlo,monospace"
+                                           Foreground="{StaticResource FgBodyBrush}" />
+                            </Border>
+                        </Grid>
+                        <Border Height="1" Background="{StaticResource DividerBrush}" />
+                        <Grid ColumnDefinitions="*,16,Auto" Margin="18,14">
+                            <StackPanel>
+                                <TextBlock Text="Status" FontSize="14" FontWeight="Medium" Foreground="White" />
+                                <TextBlock Text="Letzter Sync vor 2 Minuten" FontSize="12"
+                                           Foreground="{StaticResource FgMutedBrush}" Margin="0,2,0,0" />
+                            </StackPanel>
+                            <Border Grid.Column="2" Background="{StaticResource SuccessBgBrush}"
+                                    CornerRadius="999" Padding="10,5" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <Ellipse Width="6" Height="6" Fill="{StaticResource SuccessFgBrush}"
+                                             VerticalAlignment="Center" />
+                                    <TextBlock Text="Verbunden" FontSize="12" FontWeight="SemiBold"
+                                               Foreground="{StaticResource SuccessFgBrush}" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <TextBlock Classes="sectionLabel" Text="DARSTELLUNG" Margin="4,24,4,12" />
+                <Border Background="{StaticResource BgCardBrush}" CornerRadius="12" ClipToBounds="True">
+                    <StackPanel>
+                        <Grid ColumnDefinitions="*,16,Auto" Margin="18,14">
+                            <StackPanel>
+                                <TextBlock Text="Design" FontSize="14" FontWeight="Medium" Foreground="White" />
+                                <TextBlock Text="Folgt der Systemeinstellung, wenn 'System' ausgewählt ist" FontSize="12"
+                                           Foreground="{StaticResource FgMutedBrush}" Margin="0,2,0,0" />
+                            </StackPanel>
+                            <Border Grid.Column="2" Classes="segmented" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" Spacing="2">
+                                    <Button Classes="segment"
+                                            Classes.active="{Binding Theme, Converter={StaticResource StringEquals}, ConverterParameter=System}"
+                                            Command="{Binding SetThemeCommand}" CommandParameter="System">
+                                        <TextBlock Text="System" />
+                                    </Button>
+                                    <Button Classes="segment"
+                                            Classes.active="{Binding Theme, Converter={StaticResource StringEquals}, ConverterParameter=Light}"
+                                            Command="{Binding SetThemeCommand}" CommandParameter="Light">
+                                        <TextBlock Text="Light" />
+                                    </Button>
+                                    <Button Classes="segment"
+                                            Classes.active="{Binding Theme, Converter={StaticResource StringEquals}, ConverterParameter=Dark}"
+                                            Command="{Binding SetThemeCommand}" CommandParameter="Dark">
+                                        <TextBlock Text="Dark" />
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                        <Border Height="1" Background="{StaticResource DividerBrush}" />
+                        <Grid ColumnDefinitions="*,16,Auto" Margin="18,14">
+                            <StackPanel>
+                                <TextBlock Text="Thumbnail-Größe" FontSize="14" FontWeight="Medium" Foreground="White" />
+                                <TextBlock Text="Wie groß werden Vorschaubilder in der Timeline dargestellt" FontSize="12"
+                                           Foreground="{StaticResource FgMutedBrush}" Margin="0,2,0,0" />
+                            </StackPanel>
+                            <Border Grid.Column="2" Classes="segmented" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" Spacing="2">
+                                    <Button Classes="segment"
+                                            Classes.active="{Binding ThumbnailSize, Converter={StaticResource StringEquals}, ConverterParameter=Small}"
+                                            Command="{Binding SetThumbnailSizeCommand}" CommandParameter="Small">
+                                        <TextBlock Text="Small" />
+                                    </Button>
+                                    <Button Classes="segment"
+                                            Classes.active="{Binding ThumbnailSize, Converter={StaticResource StringEquals}, ConverterParameter=Medium}"
+                                            Command="{Binding SetThumbnailSizeCommand}" CommandParameter="Medium">
+                                        <TextBlock Text="Medium" />
+                                    </Button>
+                                    <Button Classes="segment"
+                                            Classes.active="{Binding ThumbnailSize, Converter={StaticResource StringEquals}, ConverterParameter=Large}"
+                                            Command="{Binding SetThumbnailSizeCommand}" CommandParameter="Large">
+                                        <TextBlock Text="Large" />
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <TextBlock Classes="sectionLabel" Text="UPLOAD &amp; SYNC" Margin="4,24,4,12" />
+                <Border Background="{StaticResource BgCardBrush}" CornerRadius="12" ClipToBounds="True">
+                    <Grid ColumnDefinitions="*,16,Auto" Margin="18,14">
+                        <StackPanel>
+                            <TextBlock Text="Maximale parallele Uploads" FontSize="14" FontWeight="Medium" Foreground="White" />
+                            <TextBlock Text="Zwischen 1 und 16" FontSize="12"
+                                       Foreground="{StaticResource FgMutedBrush}" Margin="0,2,0,0" />
+                        </StackPanel>
+                        <Border Grid.Column="2" Background="{StaticResource BgInputBrush}"
+                                CornerRadius="8" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <Button Classes="stepper" Command="{Binding DecreaseUploadsCommand}">
+                                    <TextBlock Text="−" />
+                                </Button>
+                                <TextBlock Text="{Binding MaxParallelUploads}"
+                                           MinWidth="38"
+                                           TextAlignment="Center"
+                                           FontSize="13"
+                                           FontWeight="SemiBold"
+                                           FontFamily="Consolas,Menlo,monospace"
+                                           Foreground="#A0C4FF"
+                                           VerticalAlignment="Center" />
+                                <Button Classes="stepper" Command="{Binding IncreaseUploadsCommand}">
+                                    <TextBlock Text="+" />
+                                </Button>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <TextBlock Classes="sectionLabel" Text="SITZUNG" Margin="4,24,4,12" />
+                <Border Background="{StaticResource BgCardBrush}" CornerRadius="12" ClipToBounds="True">
+                    <Grid ColumnDefinitions="*,16,Auto" Margin="18,14">
+                        <StackPanel>
+                            <TextBlock Text="Abmelden" FontSize="14" FontWeight="Medium" Foreground="White" />
+                            <TextBlock Text="API Key löschen und zur Anmeldung zurückkehren" FontSize="12"
+                                       Foreground="{StaticResource FgMutedBrush}" Margin="0,2,0,0" />
+                        </StackPanel>
+                        <Button Grid.Column="2"
+                                Theme="{StaticResource PolarisFlatButton}"
+                                Background="{StaticResource DangerBgBrush}"
+                                BorderBrush="{StaticResource DangerBorderBrush}"
+                                CornerRadius="8"
+                                Padding="14,8"
+                                VerticalAlignment="Center"
+                                Command="{Binding LogoutCommand}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <PathIcon Width="13" Height="13"
+                                          Foreground="{StaticResource DangerFgBrush}"
+                                          Data="{x:Static models:Icons.Logout}" />
+                                <TextBlock Text="Abmelden"
+                                           FontSize="13"
+                                           FontWeight="SemiBold"
+                                           Foreground="{StaticResource DangerFgBrush}" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <TextBlock Text="Polaris · Avalonia 12 · .NET 10"
+                           FontSize="11"
+                           Foreground="{StaticResource FgHintBrush}"
+                           HorizontalAlignment="Center"
+                           Margin="0,32,0,0" />
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

@@ -33,7 +33,8 @@ public class NavigationService(IServiceProvider services)
         {
             Shell.IsShellVisible = true;
         }
-        
+
         Shell.CurrentPage = viewModel;
+        Shell.SyncActiveNav(viewModelType);
     }
 }

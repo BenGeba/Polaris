@@ -1,8 +1,434 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Polaris.Ui.Views.TimelineView">
-    Timeline!
+             xmlns:vm="using:Polaris.Ui.ViewModels"
+             xmlns:models="using:Polaris.Ui.Models"
+             xmlns:controls="using:Polaris.Ui.Controls"
+             mc:Ignorable="d" d:DesignWidth="1060" d:DesignHeight="800"
+             x:DataType="vm:TimelineViewModel"
+             x:Class="Polaris.Ui.Views.TimelineView"
+             Background="{StaticResource BgBaseBrush}">
+
+    <Panel>
+        <DockPanel>
+            <controls:TopBar DockPanel.Dock="Top" Title="Photos" Subtitle="{Binding Stats}">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <!-- Search -->
+                    <Border Classes="search" Width="280">
+                        <Grid ColumnDefinitions="Auto,8,*">
+                            <PathIcon Grid.Column="0" Width="15" Height="15"
+                                      Foreground="{StaticResource FgMutedBrush}"
+                                      Data="{x:Static models:Icons.Magnify}" />
+                            <TextBox Grid.Column="2" PlaceholderText="Suchen…" />
+                        </Grid>
+                    </Border>
+                    <!-- S / M / L -->
+                    <Border Classes="segmented">
+                        <StackPanel Orientation="Horizontal" Spacing="2">
+                            <Button Classes="segment"
+                                    Classes.active="{Binding ThumbSize, Converter={StaticResource StringEquals}, ConverterParameter=S}"
+                                    Command="{Binding SetThumbSizeCommand}" CommandParameter="S"
+                                    Padding="11,5">
+                                <TextBlock Text="S" />
+                            </Button>
+                            <Button Classes="segment"
+                                    Classes.active="{Binding ThumbSize, Converter={StaticResource StringEquals}, ConverterParameter=M}"
+                                    Command="{Binding SetThumbSizeCommand}" CommandParameter="M"
+                                    Padding="11,5">
+                                <TextBlock Text="M" />
+                            </Button>
+                            <Button Classes="segment"
+                                    Classes.active="{Binding ThumbSize, Converter={StaticResource StringEquals}, ConverterParameter=L}"
+                                    Command="{Binding SetThumbSizeCommand}" CommandParameter="L"
+                                    Padding="11,5">
+                                <TextBlock Text="L" />
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    <Button Classes="icon" ToolTip.Tip="Hochladen">
+                        <PathIcon Data="{x:Static models:Icons.Upload}" />
+                    </Button>
+                    <Button Classes="icon" ToolTip.Tip="Mehr">
+                        <PathIcon Data="{x:Static models:Icons.More}" />
+                    </Button>
+                </StackPanel>
+            </controls:TopBar>
+
+            <!-- Date scrubber (right edge) -->
+            <Border DockPanel.Dock="Right"
+                    Width="56"
+                    BorderBrush="{StaticResource DividerBrush}"
+                    BorderThickness="1,0,0,0"
+                    Padding="0,20">
+                <ItemsControl ItemsSource="{Binding Months}" HorizontalAlignment="Center">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Spacing="4" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="models:TimelineMonth">
+                            <Button Classes="scrub"
+                                    Classes.active="{Binding IsActive}"
+                                    Click="ScrubMonth_Click">
+                                <StackPanel>
+                                    <TextBlock Classes="scrubMonth"
+                                               Text="{Binding MonthNumber}"
+                                               HorizontalAlignment="Center" />
+                                    <TextBlock Classes="scrubYear"
+                                               Text="{Binding Year}"
+                                               Margin="0,2,0,0"
+                                               HorizontalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+
+            <!-- Month groups -->
+            <ScrollViewer Name="Scroller"
+                          HorizontalScrollBarVisibility="Disabled"
+                          ScrollChanged="Scroller_ScrollChanged">
+                <ItemsControl Name="MonthsHost" ItemsSource="{Binding Months}" Margin="28,18,32,80">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Spacing="28" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="models:TimelineMonth">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+                                    <TextBlock Text="{Binding Label}"
+                                               FontSize="15"
+                                               FontWeight="Bold"
+                                               Foreground="White" />
+                                    <TextBlock Text="{Binding CountText}"
+                                               FontSize="11"
+                                               Foreground="{StaticResource FgLabelBrush}"
+                                               VerticalAlignment="Bottom" />
+                                </StackPanel>
+                                <ItemsControl ItemsSource="{Binding Thumbs}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <controls:JustifiedRowsPanel RowHeight="{Binding RowHeight}" Gap="4" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="models:TimelineThumb">
+                                            <Border Classes="thumb"
+                                                    Classes.selected="{Binding IsSelected}"
+                                                    Background="{Binding Background}"
+                                                    CornerRadius="4"
+                                                    ClipToBounds="True"
+                                                    Cursor="Hand"
+                                                    PointerPressed="Thumb_PointerPressed">
+                                                <Panel>
+                                                    <!-- top-light highlight -->
+                                                    <Border IsHitTestVisible="False" CornerRadius="4">
+                                                        <Border.Background>
+                                                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                                                <GradientStop Color="#14FFFFFF" Offset="0" />
+                                                                <GradientStop Color="#00FFFFFF" Offset="0.3" />
+                                                            </LinearGradientBrush>
+                                                        </Border.Background>
+                                                    </Border>
+                                                    <!-- selection check -->
+                                                    <Border IsVisible="{Binding IsSelected}"
+                                                            Width="20" Height="20"
+                                                            CornerRadius="10"
+                                                            Background="{StaticResource BrandGradient}"
+                                                            HorizontalAlignment="Left"
+                                                            VerticalAlignment="Top"
+                                                            Margin="6">
+                                                        <PathIcon Width="11" Height="11"
+                                                                  Foreground="White"
+                                                                  Data="{x:Static models:Icons.Check}" />
+                                                    </Border>
+                                                    <!-- video badge -->
+                                                    <Border IsVisible="{Binding IsVideo}"
+                                                            Background="#A6000000"
+                                                            CornerRadius="3"
+                                                            Padding="5,2"
+                                                            HorizontalAlignment="Right"
+                                                            VerticalAlignment="Bottom"
+                                                            Margin="6">
+                                                        <StackPanel Orientation="Horizontal" Spacing="3">
+                                                            <PathIcon Width="7" Height="7"
+                                                                      Foreground="White"
+                                                                      Data="{x:Static models:Icons.Play}" />
+                                                            <TextBlock Text="{Binding Duration}"
+                                                                       FontSize="10"
+                                                                       FontWeight="SemiBold"
+                                                                       Foreground="White" />
+                                                        </StackPanel>
+                                                    </Border>
+                                                    <!-- favorite badge -->
+                                                    <PathIcon IsVisible="{Binding IsFavorite}"
+                                                              Width="12" Height="12"
+                                                              Foreground="White"
+                                                              HorizontalAlignment="Left"
+                                                              VerticalAlignment="Bottom"
+                                                              Margin="6"
+                                                              Data="{x:Static models:Icons.HeartFilled}" />
+                                                </Panel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
+
+        <!-- Floating selection bar -->
+        <Border IsVisible="{Binding HasSelection}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0,0,0,24"
+                Background="{StaticResource BgInputBrush}"
+                BorderBrush="{StaticResource BorderSubtleBrush}"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="16,8,8,8"
+                BoxShadow="0 16 48 0 #80000000">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+                <Button Classes="iconSm"
+                        VerticalAlignment="Center"
+                        Command="{Binding ClearSelectionCommand}"
+                        ToolTip.Tip="Auswahl aufheben">
+                    <PathIcon Data="{x:Static models:Icons.Close}" />
+                </Button>
+                <TextBlock VerticalAlignment="Center"
+                           FontSize="13"
+                           FontWeight="Medium"
+                           Foreground="White">
+                    <Run Text="{Binding SelectedCount}" /><Run Text=" ausgewählt" />
+                </TextBlock>
+                <Border Width="1" Height="18"
+                        Background="{StaticResource BorderSubtleBrush}"
+                        VerticalAlignment="Center" />
+                <StackPanel Orientation="Horizontal">
+                    <Button Classes="icon" ToolTip.Tip="Favorisieren">
+                        <PathIcon Data="{x:Static models:Icons.Heart}" />
+                    </Button>
+                    <Button Classes="icon" ToolTip.Tip="Herunterladen">
+                        <PathIcon Data="{x:Static models:Icons.Download}" />
+                    </Button>
+                    <Button Classes="icon" ToolTip.Tip="Zu Album">
+                        <PathIcon Data="{x:Static models:Icons.Folder}" />
+                    </Button>
+                    <Button Classes="icon" ToolTip.Tip="Teilen">
+                        <PathIcon Data="{x:Static models:Icons.Share}" />
+                    </Button>
+                    <Button Classes="icon" ToolTip.Tip="Archivieren">
+                        <PathIcon Data="{x:Static models:Icons.Archive}" />
+                    </Button>
+                    <Button Classes="icon" ToolTip.Tip="Löschen">
+                        <PathIcon Data="{x:Static models:Icons.Trash}" />
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Asset detail (lightbox) -->
+        <Panel IsVisible="{Binding IsThumbOpen}" Background="#D9000000">
+            <DockPanel>
+                <!-- Detail top bar -->
+                <Border DockPanel.Dock="Top"
+                        Height="52"
+                        Background="{StaticResource BgBaseBrush}"
+                        BorderBrush="{StaticResource DividerBrush}"
+                        BorderThickness="0,0,0,1"
+                        Padding="16,0">
+                    <DockPanel VerticalAlignment="Center">
+                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Spacing="4">
+                            <Button Classes="icon" ToolTip.Tip="Favorisieren">
+                                <PathIcon Data="{x:Static models:Icons.Heart}" />
+                            </Button>
+                            <Button Classes="icon" ToolTip.Tip="Teilen">
+                                <PathIcon Data="{x:Static models:Icons.Share}" />
+                            </Button>
+                            <Button Classes="icon" ToolTip.Tip="Zu Album">
+                                <PathIcon Data="{x:Static models:Icons.Folder}" />
+                            </Button>
+                            <Button Classes="icon" ToolTip.Tip="Herunterladen">
+                                <PathIcon Data="{x:Static models:Icons.Download}" />
+                            </Button>
+                            <Button Classes="icon active" ToolTip.Tip="Details">
+                                <PathIcon Data="{x:Static models:Icons.Information}" />
+                            </Button>
+                            <Button Classes="icon" ToolTip.Tip="Löschen">
+                                <PathIcon Data="{x:Static models:Icons.Trash}" />
+                            </Button>
+                            <Button Classes="icon" ToolTip.Tip="Mehr">
+                                <PathIcon Data="{x:Static models:Icons.More}" />
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <Button Classes="icon"
+                                    Command="{Binding CloseDetailCommand}"
+                                    ToolTip.Tip="Schließen">
+                                <PathIcon Data="{x:Static models:Icons.Close}" />
+                            </Button>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="Sa, 24. Mai 2026"
+                                           FontSize="13"
+                                           FontWeight="SemiBold"
+                                           Foreground="White" />
+                                <TextBlock Text="Tegernsee, Bayern"
+                                           FontSize="11"
+                                           Foreground="{StaticResource FgMutedBrush}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+
+                <!-- Info panel -->
+                <Border DockPanel.Dock="Right"
+                        Width="320"
+                        Background="{StaticResource SidebarBackground}"
+                        BorderBrush="{StaticResource DividerBrush}"
+                        BorderThickness="1,0,0,0">
+                    <ScrollViewer>
+                        <StackPanel Margin="22,20">
+                            <TextBlock Classes="sectionLabel" Text="DETAILS" Margin="0,0,0,14" />
+
+                            <Grid ColumnDefinitions="Auto,12,*" Margin="0,10">
+                                <PathIcon Width="15" Height="15" Foreground="{StaticResource FgLabelBrush}"
+                                          VerticalAlignment="Top" Data="{x:Static models:Icons.Information}" />
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="Datei" FontSize="11" Foreground="{StaticResource FgMutedBrush}" />
+                                    <TextBlock Text="{Binding OpenedFileName}"
+                                               FontSize="13" Foreground="White"
+                                               FontFamily="Consolas,Menlo,monospace"
+                                               Margin="0,2,0,0" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="Auto,12,*" Margin="0,10">
+                                <PathIcon Width="15" Height="15" Foreground="{StaticResource FgLabelBrush}"
+                                          VerticalAlignment="Top" Data="{x:Static models:Icons.Camera}" />
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="Aufnahme" FontSize="11" Foreground="{StaticResource FgMutedBrush}" />
+                                    <TextBlock Text="Apple iPhone 15 Pro" FontSize="13" Foreground="White" Margin="0,2,0,0" />
+                                    <TextBlock Text="Hauptkamera 24 mm f/1.78" FontSize="12"
+                                               Foreground="{StaticResource FgNavBrush}" Margin="0,2,0,0" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="Auto,12,*" Margin="0,10">
+                                <PathIcon Width="15" Height="15" Foreground="{StaticResource FgLabelBrush}"
+                                          VerticalAlignment="Top" Data="{x:Static models:Icons.Settings}" />
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="Belichtung" FontSize="11" Foreground="{StaticResource FgMutedBrush}" />
+                                    <TextBlock Text="ISO 64 · 1/1200 s · f/1.78" FontSize="13" Foreground="White" Margin="0,2,0,0" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="Auto,12,*" Margin="0,10">
+                                <PathIcon Width="15" Height="15" Foreground="{StaticResource FgLabelBrush}"
+                                          VerticalAlignment="Top" Data="{x:Static models:Icons.MapMarker}" />
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="Ort" FontSize="11" Foreground="{StaticResource FgMutedBrush}" />
+                                    <TextBlock Text="Tegernsee, Bayern" FontSize="13" Foreground="White" Margin="0,2,0,0" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid ColumnDefinitions="Auto,12,*" Margin="0,10">
+                                <PathIcon Width="15" Height="15" Foreground="{StaticResource FgLabelBrush}"
+                                          VerticalAlignment="Top" Data="{x:Static models:Icons.Information}" />
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="Größe" FontSize="11" Foreground="{StaticResource FgMutedBrush}" />
+                                    <TextBlock Text="4 032 × 3 024 · 3,2 MB" FontSize="13" Foreground="White" Margin="0,2,0,0" />
+                                </StackPanel>
+                            </Grid>
+
+                            <TextBlock Classes="sectionLabel" Text="PERSONEN" Margin="0,24,0,12" />
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <StackPanel>
+                                    <Border Width="44" Height="44" CornerRadius="22">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                                                <GradientStop Color="#7E4E8C" Offset="0" />
+                                                <GradientStop Color="#2563EB" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="A" FontSize="16" FontWeight="Bold" Foreground="White"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                    <TextBlock Text="Anna" FontSize="11" Foreground="{StaticResource FgBodyBrush}"
+                                               Margin="0,6,0,0" HorizontalAlignment="Center" />
+                                </StackPanel>
+                                <StackPanel>
+                                    <Border Width="44" Height="44" CornerRadius="22">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                                                <GradientStop Color="#2F5C4A" Offset="0" />
+                                                <GradientStop Color="#0F2D1F" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="B" FontSize="16" FontWeight="Bold" Foreground="White"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                    <TextBlock Text="Ben" FontSize="11" Foreground="{StaticResource FgBodyBrush}"
+                                               Margin="0,6,0,0" HorizontalAlignment="Center" />
+                                </StackPanel>
+                            </StackPanel>
+
+                            <TextBlock Classes="sectionLabel" Text="ALBEN" Margin="0,24,0,10" />
+                            <Border Background="{StaticResource BgCardBrush}"
+                                    CornerRadius="8"
+                                    Padding="12,10">
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Border Width="28" Height="28" CornerRadius="6">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                                                <GradientStop Color="#5e8a6a" Offset="0" />
+                                                <GradientStop Color="#0f2d1f" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <TextBlock Text="Sommer 2025" FontSize="13" Foreground="White"
+                                               VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+
+                <!-- Main image -->
+                <Panel Margin="28">
+                    <Border Background="{Binding OpenedThumb.Background}"
+                            CornerRadius="8"
+                            ClipToBounds="True"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Width="720" Height="540"
+                            BoxShadow="0 24 60 0 #99000000">
+                        <Panel>
+                            <Border IsHitTestVisible="False">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                        <GradientStop Color="#0FFFFFFF" Offset="0" />
+                                        <GradientStop Color="#00FFFFFF" Offset="0.3" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <Border IsVisible="{Binding OpenedThumb.IsVideo, FallbackValue=False}"
+                                    Width="64" Height="64"
+                                    CornerRadius="32"
+                                    Background="#80000000"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                                <PathIcon Width="22" Height="22"
+                                          Foreground="White"
+                                          Data="{x:Static models:Icons.Play}" />
+                            </Border>
+                        </Panel>
+                    </Border>
+                </Panel>
+            </DockPanel>
+        </Panel>
+    </Panel>
 </UserControl>
