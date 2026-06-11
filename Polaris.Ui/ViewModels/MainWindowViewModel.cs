@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
+using IconPacks.Avalonia.Material;
 using Polaris.Ui.Interfaces;
 using Polaris.Ui.Models;
 
@@ -17,7 +18,7 @@ public partial class MainWindowViewModel(INavigationService navigationService) :
     public partial NavigationItem? SelectedNavItem { get; set; }
     
     public IReadOnlyList<NavigationItem> NavigationItems { get; } = 
-        [new("Photos", Icon: "CameraIcon", ViewModelType: typeof(TimelineViewModel)), new("Explore", Icon: "LupenIcon", ViewModelType: typeof(ExploreViewModel))];
+        [new("Photos", Icon: PackIconMaterialKind.Camera, ViewModelType: typeof(TimelineViewModel)), new("Explore", Icon: PackIconMaterialKind.Magnify, ViewModelType: typeof(ExploreViewModel))];
 
     partial void OnSelectedNavItemChanged(NavigationItem? value)
     {

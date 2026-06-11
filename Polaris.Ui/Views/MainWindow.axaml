@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Polaris.Ui.ViewModels"
         xmlns:models="using:Polaris.Ui.Models"
+        xmlns:iconPacks="https://github.com/MahApps/IconPacks.Avalonia"
         x:Class="Polaris.Ui.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -27,7 +28,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate x:DataType="models:NavigationItem">
                             <StackPanel Orientation="Horizontal" Spacing="12" Margin="8, 4">
-                                <TextBlock Text="{Binding Icon}" FontSize="16" />
+                                <iconPacks:PackIconMaterial Kind="{Binding Icon}" Width="16" Height="16" VerticalAlignment="Center" />
                                 <TextBlock Text="{Binding Title}" VerticalAlignment="Center" />
                             </StackPanel>
                         </DataTemplate>
