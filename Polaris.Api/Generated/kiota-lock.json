@@ -2,7 +2,7 @@
   "descriptionHash": "3E55F5A5BA801CF0F8FAB6A4CC851F6FE5B4809C20E7AD7E2AB44CABEA6726AF4CDA8B108B2B13ADA26748BA6F6381570797FE2C9B4DC1CB0F2F77AF02B3FC5B",
   "descriptionLocation": "../immich-openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.32.2",
   "clientClassName": "ImmichApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Polaris.Api.Client",
