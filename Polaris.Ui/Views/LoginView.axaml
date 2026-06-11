@@ -85,7 +85,7 @@
                             BorderThickness="1"
                             BorderBrush="#252535">
                         <TextBox Text="{Binding ServerUrl}"
-                                 Watermark="https://immich.example.com"
+                                 PlaceholderText="https://immich.example.com"
                                  Background="Transparent"
                                  BorderThickness="0"
                                  Foreground="White"
@@ -108,7 +108,7 @@
                             BorderThickness="1"
                             BorderBrush="#252535">
                         <TextBox Text="{Binding ApiKey}"
-                                 Watermark="Aus den Immich Einstellungen"
+                                 PlaceholderText="Aus den Immich Einstellungen"
                                  PasswordChar="•"
                                  Background="Transparent"
                                  BorderThickness="0"
