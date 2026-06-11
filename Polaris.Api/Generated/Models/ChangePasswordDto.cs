@@ -38,6 +38,7 @@ namespace Polaris.Api.Client.Models
         public ChangePasswordDto()
         {
             AdditionalData = new Dictionary<string, object>();
+            InvalidateSessions = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

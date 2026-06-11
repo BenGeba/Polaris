@@ -30,7 +30,7 @@ public class JsonSettingsService : ISettingsService
         }
         
         await using var stream = File.Create(SettingsPath);
-        await JsonSerializer.SerializeAsync(stream, settings, JsonSerializerOptions);
+        await JsonSerializer.SerializeAsync(stream, settings, JsonSerializerOptions).ConfigureAwait(false);
         
         Current = settings;
     }
@@ -46,7 +46,9 @@ public class JsonSettingsService : ISettingsService
         try
         {
             await using var stream = File.OpenRead(SettingsPath);
-            Current = await JsonSerializer.DeserializeAsync<AppSettings>(stream, JsonSerializerOptions) ?? new AppSettings();
+            Current = await JsonSerializer.DeserializeAsync<AppSettings>(stream, JsonSerializerOptions)
+                          .ConfigureAwait(false) ??
+                      new AppSettings();
         }
         catch (Exception e)
         {

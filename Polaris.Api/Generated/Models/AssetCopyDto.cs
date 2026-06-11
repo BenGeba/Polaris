@@ -34,6 +34,11 @@ namespace Polaris.Api.Client.Models
         public AssetCopyDto()
         {
             AdditionalData = new Dictionary<string, object>();
+            Albums = true;
+            Favorite = true;
+            SharedLinks = true;
+            Sidecar = true;
+            Stack = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
